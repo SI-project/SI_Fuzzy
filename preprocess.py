@@ -32,7 +32,7 @@ def allPreprocess(text):
     tokens = lowercase(tokens)
     tokens = punctuations(tokens)
     tokens = numbers(tokens)
-    tokens = stopWords("spanish", tokens)
+    tokens = stopWords("english", tokens)
     tokens = stemming(tokens)
     tokens = lemmatizing(tokens)
     return tokens
