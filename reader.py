@@ -1,4 +1,5 @@
 import PyPDF2
+import json
 from preprocess import allPreprocess
 from os import listdir
 from os.path import isfile, join
@@ -7,7 +8,8 @@ class Reader():
     def __init__(self):
         self.readFunction = {
             "txt" : self.__readTxt,
-            "pdf" : self.__readPdf
+            "pdf" : self.__readPdf,
+            "json" : self.__readJson
         }
         self.vocab = set()
         self.documents = []
@@ -22,6 +24,16 @@ class Reader():
         _format = filename.split(".")[-1]
         if _format in self.readFunction.keys():
             self.readFunction[_format](filename)
+
+    def __readJson(self, filename):
+        name = filename.split("/")[-1]
+        data = ""
+        with open(filename, encoding='utf-8') as js:
+            data_dict = json.load(js)
+
+        for _dict in data_dict:
+            for k in _dict.keys():
+                self.__save_data(_dict[k], k)
 
     def __readPdf(self, filename):
         name = filename.split("/")[-1]
