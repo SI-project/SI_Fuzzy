@@ -1,0 +1,197 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> query
+Rule 2     query -> atom logic query
+Rule 3     query -> LPAREN query RPAREN
+Rule 4     query -> atom
+Rule 5     atom -> term
+Rule 6     atom -> NEG term
+Rule 7     term -> ID
+Rule 8     logic -> AND
+Rule 9     logic -> OR
+
+Terminals, with rules where they appear
+
+AND                  : 8
+ID                   : 7
+LPAREN               : 3
+NEG                  : 6
+OR                   : 9
+RPAREN               : 3
+error                : 
+
+Nonterminals, with rules where they appear
+
+atom                 : 2 4
+logic                : 2
+program              : 0
+query                : 1 2 3
+term                 : 5 6
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . query
+    (2) query -> . atom logic query
+    (3) query -> . LPAREN query RPAREN
+    (4) query -> . atom
+    (5) atom -> . term
+    (6) atom -> . NEG term
+    (7) term -> . ID
+
+    LPAREN          shift and go to state 4
+    NEG             shift and go to state 6
+    ID              shift and go to state 7
+
+    program                        shift and go to state 1
+    query                          shift and go to state 2
+    atom                           shift and go to state 3
+    term                           shift and go to state 5
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> query .
+
+    $end            reduce using rule 1 (program -> query .)
+
+
+state 3
+
+    (2) query -> atom . logic query
+    (4) query -> atom .
+    (8) logic -> . AND
+    (9) logic -> . OR
+
+    $end            reduce using rule 4 (query -> atom .)
+    RPAREN          reduce using rule 4 (query -> atom .)
+    AND             shift and go to state 9
+    OR              shift and go to state 10
+
+    logic                          shift and go to state 8
+
+state 4
+
+    (3) query -> LPAREN . query RPAREN
+    (2) query -> . atom logic query
+    (3) query -> . LPAREN query RPAREN
+    (4) query -> . atom
+    (5) atom -> . term
+    (6) atom -> . NEG term
+    (7) term -> . ID
+
+    LPAREN          shift and go to state 4
+    NEG             shift and go to state 6
+    ID              shift and go to state 7
+
+    query                          shift and go to state 11
+    atom                           shift and go to state 3
+    term                           shift and go to state 5
+
+state 5
+
+    (5) atom -> term .
+
+    AND             reduce using rule 5 (atom -> term .)
+    OR              reduce using rule 5 (atom -> term .)
+    $end            reduce using rule 5 (atom -> term .)
+    RPAREN          reduce using rule 5 (atom -> term .)
+
+
+state 6
+
+    (6) atom -> NEG . term
+    (7) term -> . ID
+
+    ID              shift and go to state 7
+
+    term                           shift and go to state 12
+
+state 7
+
+    (7) term -> ID .
+
+    AND             reduce using rule 7 (term -> ID .)
+    OR              reduce using rule 7 (term -> ID .)
+    $end            reduce using rule 7 (term -> ID .)
+    RPAREN          reduce using rule 7 (term -> ID .)
+
+
+state 8
+
+    (2) query -> atom logic . query
+    (2) query -> . atom logic query
+    (3) query -> . LPAREN query RPAREN
+    (4) query -> . atom
+    (5) atom -> . term
+    (6) atom -> . NEG term
+    (7) term -> . ID
+
+    LPAREN          shift and go to state 4
+    NEG             shift and go to state 6
+    ID              shift and go to state 7
+
+    atom                           shift and go to state 3
+    query                          shift and go to state 13
+    term                           shift and go to state 5
+
+state 9
+
+    (8) logic -> AND .
+
+    LPAREN          reduce using rule 8 (logic -> AND .)
+    NEG             reduce using rule 8 (logic -> AND .)
+    ID              reduce using rule 8 (logic -> AND .)
+
+
+state 10
+
+    (9) logic -> OR .
+
+    LPAREN          reduce using rule 9 (logic -> OR .)
+    NEG             reduce using rule 9 (logic -> OR .)
+    ID              reduce using rule 9 (logic -> OR .)
+
+
+state 11
+
+    (3) query -> LPAREN query . RPAREN
+
+    RPAREN          shift and go to state 14
+
+
+state 12
+
+    (6) atom -> NEG term .
+
+    AND             reduce using rule 6 (atom -> NEG term .)
+    OR              reduce using rule 6 (atom -> NEG term .)
+    $end            reduce using rule 6 (atom -> NEG term .)
+    RPAREN          reduce using rule 6 (atom -> NEG term .)
+
+
+state 13
+
+    (2) query -> atom logic query .
+
+    $end            reduce using rule 2 (query -> atom logic query .)
+    RPAREN          reduce using rule 2 (query -> atom logic query .)
+
+
+state 14
+
+    (3) query -> LPAREN query RPAREN .
+
+    $end            reduce using rule 3 (query -> LPAREN query RPAREN .)
+    RPAREN          reduce using rule 3 (query -> LPAREN query RPAREN .)
+

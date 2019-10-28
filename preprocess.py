@@ -16,6 +16,7 @@ def stopWords(language, token_list):
     stop_words = set(stopwords.words(language))
     return [w for w in token_list if w not in stop_words]
 
+
 def numbers(token_list):
     return [w for w in token_list if not w.isdigit()]
 
@@ -36,3 +37,10 @@ def allPreprocess(text):
     tokens = stemming(tokens)
     tokens = lemmatizing(tokens)
     return tokens
+
+def queryProcess(text):
+    tokens = [text]
+    tokens = lowercase(tokens)
+    tokens = stemming(tokens)
+    tokens = lemmatizing(tokens)
+    return tokens[0]
