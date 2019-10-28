@@ -74,6 +74,11 @@ def rank_Cdnf(Query,documents,d_index):
         product*= rank_cc(cc,documents,Q_t,d_index)
     return 1 - product
 
+def rank(Query,documents):
+    ranks = []
+    for i,d in enumerate(documents):
+        ranks.append(rank_Cdnf(Query,documents,i))
+    return sorted([(ranks[i],d.name) for i,d in enumerate(documents)],key=lambda x: x[0],reverse=True)
 
 # a ="A & (C | ~D)"
 # documents = [{"A": 0, "B":0, "C":1, "D": 0},

@@ -3,7 +3,6 @@ import json
 from preprocess import allPreprocess
 from os import listdir
 from os.path import isfile, join
-from Fuzzy import rank_Cdnf
 class Reader():
     def __init__(self):
         self.readFunction = {
@@ -73,20 +72,6 @@ class Document(dict):
 
     def __str__(self):
         return "{} => {}".format(self.name, dict.__str__(self))
-
-r = Reader()
-r.readDirectory("./")
-query = "iron & ~mistery"
-query = allPreprocess(query)
-query = " ".join(query)
-print(query)
-for i,d in enumerate(r.documents):
-    print(d.name)
-    v = rank_Cdnf(query,r.documents,i)
-    v *= 100
-    v = int(v)
-    input(v/100)
-
 
 #print(r.vocab)
 #for doc in r.documents:
