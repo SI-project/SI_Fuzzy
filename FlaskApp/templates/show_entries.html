@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                        {% if result_info.cnt_results>0 %}
+                        <div id="results-info">
+                            <h2>
+                                {{ result_info.cnt_results }} results found for: <span class="text-navy">“{{ query_form.query.data }}”</span>
+                            </h2>
+                            <small>Request time  ({{ result_info.time }} seconds)</small>
+                        </div>
+                            {% else %}
+                            <h2> Make your Query</h2>
+                        {% endif %}
+
+                            <div class="search-form">
+                                <form action="/" method="POST">
+                                    <div class="input-group">
+                                        <dd> {{ query_form.query(class='form-control input-lg')| safe }}</dd>
+{#                                        <input placeholder="Admin Theme" name="search" class="form-control input-lg" type="text">#}
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-lg btn-primary" type="submit">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                            {% if session.logged_in %}
+                                             <button class="btn btn-lg btn-primary" style="margin-left: 1px" type="submit">
+                                                <i class="fa fa-upload"></i>
+                                            </button>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                        <div id="set-search-results">
+                            {% for result in results %}
+                                <div class="search-result">
+                                <h3><a href="{{ result.url }}">{{ result.name }}</a></h3>
+                                <a href="{{ result.url }}" class="search-link"></a>
+                                <p>
+                                    {{ result.description }}
+                                </p>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                            {% endfor %}
+                        </div>
+                            {% if searching %}
+                            <div class="text-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i></button>
+                                    <button class="btn btn-white">1</button>
+                                    <button class="btn btn-white  active">2</button>
+                                    <button class="btn btn-white">3</button>
+                                    <button class="btn btn-white">4</button>
+                                    <button class="btn btn-white">5</button>
+                                    <button class="btn btn-white">6</button>
+                                    <button class="btn btn-white">7</button>
+                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i> </button>
+                                </div>
+                            </div>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+{% endblock %}
