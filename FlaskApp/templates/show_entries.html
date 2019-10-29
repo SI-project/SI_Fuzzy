@@ -25,14 +25,15 @@
                                             <button class="btn btn-lg btn-primary" type="submit">
                                                 <i class="fa fa-search"></i>
                                             </button>
-                                            {% if session.logged_in %}
-                                             <button class="btn btn-lg btn-primary" style="margin-left: 1px" type="submit">
-                                                <i class="fa fa-upload"></i>
-                                            </button>
-                                            {% endif %}
+
                                         </div>
                                     </div>
 
+                                </form>
+
+                                <form action="upload-image" method="POST" enctype="multipart/form-data">
+                                    <input type="file" id="file_input" webkitdirectory="" directory="">
+{#                                    <input type="file" class="" id="file_input">#}
                                 </form>
                             </div>
                             <div class="hr-line-dashed"></div>

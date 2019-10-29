@@ -2,11 +2,9 @@ from flask import Flask, request, session,g,redirect,url_for,abort,render_templa
 import utils
 from forms import SearchQueryData
 # CONFIGURATION
+
 DEBUG = True
 SECRET_KEY = 'development key'
-USERNAME = 'admin@fuzzy.com'
-PASSWORD = 'default'
-
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -37,27 +35,6 @@ def show_entries():
                            result_info=result_info,
                            query_form=query)
 
-@app.route('/login', methods=['GET','POST'])
-def login():
-    error = None
-    if request.method == "POST":
-        print(app.config)
-        if request.form['username'] != app.config["USERNAME"]:
-            error = 'Invalid username'
-        elif request.form['password'] != app.config['PASSWORD']:
-            error = 'Invalid password'
-        else:
-            session['logged_in'] = True
-            flash('You were logged in')
-            return redirect(url_for('show_entries'))
-    return render_template('login.html',error=error)
-
-
-@app.route('/logout')
-def logout():
-    session.pop('logged_in',None)
-    flash('You were logged out')
-    return redirect(url_for('show_entries'))
 
 if __name__ == '__main__':
     app.run()

@@ -28,19 +28,19 @@
             </form>
 
         </div>
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    {% if session.logged_in %}
-                    <a href="/logout">
-                        <i class="fa fa-sign-out"></i> Log out
-                    </a>
-                    {% else %}
-                    <a href="{{ url_for('login')}}">
-                        <i class="fa fa-sign-in"></i> Log in
-                    </a>
-                    {% endif %}
-                </li>
-            </ul>
+{#            <ul class="nav navbar-top-links navbar-right">#}
+{#                <li>#}
+{#                    {% if session.logged_in %}#}
+{#                    <a href="/logout">#}
+{#                        <i class="fa fa-sign-out"></i> Log out#}
+{#                    </a>#}
+{#                    {% else %}#}
+{#                    <a href="{{ url_for('login')}}">#}
+{#                        <i class="fa fa-sign-in"></i> Log in#}
+{#                    </a>#}
+{#                    {% endif %}#}
+{#                </li>#}
+{#            </ul>#}
 
         </nav>
         </div>
