@@ -1,4 +1,4 @@
-from fuzzy import rank
+from Fuzzy import rank
 from reader import Reader
 from preprocess import allPreprocess
 from lexer_query import Lexer

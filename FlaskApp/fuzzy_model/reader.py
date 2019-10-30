@@ -1,6 +1,6 @@
 import PyPDF2
 import json
-from preprocess import allPreprocess
+from .preprocess import allPreprocess
 from os import listdir
 from os.path import isfile, join
 class Reader():
@@ -23,6 +23,10 @@ class Reader():
         _format = filename.split(".")[-1]
         if _format in self.readFunction.keys():
             self.readFunction[_format](filename)
+
+    def readFiles(self,files):
+        for file in files:
+            self.readFile(file)
 
     def __readJson(self, filename):
         name = filename.split("/")[-1]

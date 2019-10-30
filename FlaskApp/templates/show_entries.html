@@ -17,7 +17,11 @@
                         {% endif %}
 
                             <div class="search-form">
-                                <form action="/" method="POST">
+                            {% if uploaded_folder %}
+                                <form action="/search/folder{{ uploaded_folder_info.folder_temp_path }}" method="POST">
+                                {% else %}
+                                <form action="/">
+                                    {% endif %}
                                     <div class="input-group">
                                         <dd> {{ query_form.query(class='form-control input-lg')| safe }}</dd>
 {#                                        <input placeholder="Admin Theme" name="search" class="form-control input-lg" type="text">#}
@@ -31,16 +35,23 @@
 
                                 </form>
 
-                           
+
                                 <form action="/upload-folder" method="POST" enctype="multipart/form-data">
-{#                                    <label> Select image</label>#}
+
                                     <input type="file" id="file" name="file" webkitdirectory multiple/>
                                     <label for="file">Choose folder</label>
-                                            <button class="btn btn-lg btn-primary" style="margin-left:2px"type="submit">
+
+
+                                    <button class="btn btn-lg btn-primary" style="margin-left:2px"type="submit">
                                                 <i class="fa fa-upload"></i>
                                             </button>
 {#                                    <button class="btn btn-primary">Upload</button>#}
                                 </form>
+                                {% if uploaded_folder %}
+                                    <label>Uploaded {{ uploaded_folder_info.cnt_files }} files from {{ uploaded_folder_info.folder_name }} folder</label>
+                                    {% else %}
+                                    <label>Choose the folder first</label>
+                                {% endif %}
 
                             </div>
                             <div class="hr-line-dashed"></div>
