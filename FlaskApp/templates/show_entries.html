@@ -31,10 +31,17 @@
 
                                 </form>
 
-                                <form action="upload-image" method="POST" enctype="multipart/form-data">
-                                    <input type="file" id="file" webkitdirectory multiple/>
-                                    <label for="file" >choose a file</label>
+                           
+                                <form action="/upload-folder" method="POST" enctype="multipart/form-data">
+{#                                    <label> Select image</label>#}
+                                    <input type="file" id="file" name="file" webkitdirectory multiple/>
+                                    <label for="file">Choose folder</label>
+                                            <button class="btn btn-lg btn-primary" style="margin-left:2px"type="submit">
+                                                <i class="fa fa-upload"></i>
+                                            </button>
+{#                                    <button class="btn btn-primary">Upload</button>#}
                                 </form>
+
                             </div>
                             <div class="hr-line-dashed"></div>
                         <div id="set-search-results">

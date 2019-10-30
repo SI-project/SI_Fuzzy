@@ -17,6 +17,11 @@ def _get_results(query):
     result_info = utils.GeneralResultInfo(10,1.0)
     return [utils.ResultObject(name,url,description) for i in range(10)], result_info
 
+@app.route('/upload-folder', methods=['POST'])
+def upload_folder():
+    print(request.files)
+    return redirect('/')
+
 @app.route('/',methods=['GET','POST'])
 def show_entries():
 

@@ -8246,12 +8246,12 @@ body.md-skin {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    padding: 0.4rem 1rem;
+    padding: 1.4rem 1rem;
 }
 
 [type="file"]:focus + label,
 [type="file"] + label:hover {
-    background-color: #0798D3;
+    background-color: rgb(4, 111, 153);
 }
 
 [type="file"]:focus + label {
