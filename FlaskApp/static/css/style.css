@@ -8227,3 +8227,33 @@ body.md-skin {
     margin: 0;
   }
 }
+/*mine*/
+
+[type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+
+[type="file"] + label {
+    background-color: #0798D3;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.4rem 1rem;
+}
+
+[type="file"]:focus + label,
+[type="file"] + label:hover {
+    background-color: #0798D3;
+}
+
+[type="file"]:focus + label {
+    outline: 1px dotted #0798D3;
+}
