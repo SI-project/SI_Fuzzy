@@ -70,7 +70,7 @@ class Reader():
 
 class Document(dict):
     def __init__(self, name):
-        uper(dict,self).__init__()
+        super(dict,self).__init__()
         self.name = name
 
     def __getitem__(self, i):
