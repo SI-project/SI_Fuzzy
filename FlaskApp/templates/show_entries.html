@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
+    {% from "_macro.html" import render_field %}
     <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
                 <div class="col-lg-12">
@@ -14,45 +15,27 @@
                         </div>
                             {% else %}
                             <h2> Make your Query</h2>
+
                         {% endif %}
+                            <br/>
 
                             <div class="search-form">
-                            {% if uploaded_folder %}
-                                <form action="/search/folder{{ uploaded_folder_info.folder_temp_path }}" method="POST">
-                                {% else %}
-                                <form action="/">
-                                    {% endif %}
+                                <form action="/" method="POST">
+                                    <label>{{ query_form.query.label }}</label>
                                     <div class="input-group">
-                                        <dd> {{ query_form.query(class='form-control input-lg')| safe }}</dd>
-{#                                        <input placeholder="Admin Theme" name="search" class="form-control input-lg" type="text">#}
-                                        <div class="input-group-btn">
+                                        {{ render_field(query_form.query, class='form-control input-lg')}}
+                                        <span class="input-group-btn">
                                             <button class="btn btn-lg btn-primary" type="submit">
                                                 <i class="fa fa-search"></i>
                                             </button>
 
-                                        </div>
+                                        </span>
                                     </div>
-
+                                    <label>{{ query_form.folder_path.label }}</label>
+                                    <div class="input-group">
+                                        {{ render_field(query_form.folder_path, class='form-control input-lg')}}
+                                    </div>
                                 </form>
-
-
-                                <form action="/upload-folder" method="POST" enctype="multipart/form-data">
-
-                                    <input type="file" id="file" name="file" webkitdirectory multiple/>
-                                    <label for="file">Choose folder</label>
-
-
-                                    <button class="btn btn-lg btn-primary" style="margin-left:2px"type="submit">
-                                                <i class="fa fa-upload"></i>
-                                            </button>
-{#                                    <button class="btn btn-primary">Upload</button>#}
-                                </form>
-                                {% if uploaded_folder %}
-                                    <label>Uploaded {{ uploaded_folder_info.cnt_files }} files from {{ uploaded_folder_info.folder_name }} folder</label>
-                                    {% else %}
-                                    <label>Choose the folder first</label>
-                                {% endif %}
-
                             </div>
                             <div class="hr-line-dashed"></div>
                         <div id="set-search-results">
