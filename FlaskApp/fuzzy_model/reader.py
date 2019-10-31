@@ -15,9 +15,12 @@ class Reader():
 
     def readDirectory(self, directory):
         list_of_files = listdir(directory)
+        print(f'Se encuentran {list_of_files}')
         for filename in list_of_files:
-            if isfile(filename):
-                self.readFile(join(directory,filename))
+            path = join(directory,filename)
+            if isfile(path):
+                print(f'its a file {filename}')
+                self.readFile(path)
 
     def readFile(self, filename):
         _format = filename.split(".")[-1]
@@ -48,10 +51,12 @@ class Reader():
         self.__save_data(data, name)
 
     def __readTxt(self, filename):
+        print(f" Analizando el file {filename}")
         name = filename.split("/")[-1]
         data = ""
         with open(filename, 'r') as txt:
             data = txt.read()
+
         self.__save_data(data, name)
 
     def __save_data(self, data, name):

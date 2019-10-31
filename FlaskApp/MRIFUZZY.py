@@ -11,7 +11,7 @@ UPLOAD_FILES_PATH = f'{os.getcwd()}/temp/files'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-app.config.from_envvar('MRIFUZZY_SETTINGS', silent=True)
+# app.config.from_envvar('MRIFUZZY_SETTINGS', silent=True)
 
 def _get_results(query,files):
 
@@ -32,7 +32,7 @@ def upload_folder():
         folder_name = files[0].filename.split('/')[0]
         print(os.getcwd())
         id = hash(tuple(files))
-        folder_path = f"{app.config['UPLOAD_FILES_PATH']}/{id}/{folder_name}"
+        folder_path = f"{app.config['UPLOAD_FILES_PATH']}/{id}/{folder_name}/"
         os.makedirs(folder_path,exist_ok=True)
         files = [file for file in files if file.filename.split('/')[-1].endswith('.txt') or file.filename.split('/')[-1].endswith('.pdf')]
 
@@ -61,7 +61,8 @@ def search_call(name=""):
     query = SearchQueryData(request.form)
     searching = True
     results, result_info = get_results(query.query.data, name)
-
+    print("the results are",results)
+    results = [ResultObject(result[1], name, result[0]) for result in results]
     return render_template('show_entries.html',
                            searching=searching,
                            results=results,
