@@ -1,84 +1,93 @@
 from sympy.logic.boolalg import to_dnf
 from copy import copy
-
-#entre 0 y 1
-def c_ij(i,j,documents):
-    nij = 0
-    ni = 0
-    nj = 0
-    for doc in documents:
-        if doc[i] == 1:
-            ni += 1
-            if doc[j] == 1:
-                nj+= 1
-                nij+= 1
-        elif doc[j] == 1:
-            nj+= 1
-    value = nij/(ni+nj-nij)
-    if value > 1: raise Exception("i: {} j:{}, ni : {},nj: {},nij: {}".format(i,j,ni, nj, nij))
-    return value
-#entre 0 y 1
-def term_fuzzy(term,doc,documents):
-    product = 1
-    for word in doc.keys():
-        if doc[word] == 1:
-            product *= (1 - c_ij(term,word,documents))
-    return 1 - product
+from util import Zero_dict
+class Fuzzy_Model:
+    def __init__(self,documents):
+        self.c_ij_ = {}
+        self.documents = documents
+        self.built_cij()
+    #entre 0 y 1
+    def built_cij(self):
+        ni = Zero_dict()
+        nij = Zero_dict()
+        for doc in self.documents:
+            words = doc.keys()
+            for i,word in enumerate(words):
+                for j in range(i,len(words)):
+                    ni[word] = ni[word]+1
+                    nij[(word,words[j])] += 1
+                    nij[(words[j],word)] += 1
+        for i,j in nij.keys():
+            old = nij[(i,j)]
+            nij[(i,j)] = old/(ni[i]+ni[j]-old)
+        self.c_ij_ = nij                    
 
 
-def get_terms(Query,neg=True):
-    splits = ["|"," ","&","(",")"]
-    if neg: splits.append("~")
-    Q_l = Query
-    for i in splits:
-        Query = Query.replace(i," ")
-    return Query.split()
-#entre 0 y 1
-def rank_cc(cc,documents,Q_t,d_index):
-    query_product = 1
-    x =get_fdnf(get_terms(cc,False),Q_t,0)
-    for component in x:
-        fdnf_product = 1
-        for term in component:
-            if term[0] == "~":
-                fdnf_product*= (1 - term_fuzzy(term[1:],documents[d_index],documents))
-            else:
-                fdnf_product*= term_fuzzy(term,documents[d_index],documents)
-        query_product*= (1 - fdnf_product)
-    return query_product
+    def c_ij(self,i,j):
+        value = self.c_ij_[(i,j)]
+        if value > 1: raise Exception("i: {} j:{}".format(i,j))
+        return value
+    #entre 0 y 1
+    def term_fuzzy(self,term,doc):
+        product = 1
+        for word in doc.keys():
+            if doc[word] == 1:
+                product *= (1 - self.c_ij(term,word))
+        return 1 - product
 
 
-def get_fdnf(cc,Q_t,index):
-    if index == len(Q_t): return [copy(cc)]
-    term = Q_t[index]
-    neg_t = "~"+term
-    if neg_t in cc or term in cc:
-        return get_fdnf(cc,Q_t,index+1)
-    else:
-        cc.append(neg_t)
-        l = get_fdnf(cc,Q_t,index+1)
-        cc.pop()
-        cc.append(term)
-        r= l + get_fdnf(cc,Q_t,index+1)
-        cc.pop()
-        return r
-    
+    def get_terms(self,Query,neg=True):
+        splits = ["|"," ","&","(",")"]
+        if neg: splits.append("~")
+        for i in splits:
+            Query = Query.replace(i," ")
+        return Query.split()
+    #entre 0 y 1
+    def rank_cc(self,cc,Q_t,d_index):
+        query_product = 1
+        x =self.get_fdnf(self.get_terms(cc,False),Q_t,0)
+        for component in x:
+            fdnf_product = 1
+            for term in component:
+                if term[0] == "~":
+                    fdnf_product*= (1 - self.term_fuzzy(term[1:],self.documents[d_index]))
+                else:
+                    fdnf_product*= self.term_fuzzy(term,self.documents[d_index])
+            query_product*= (1 - fdnf_product)
+        return query_product
 
-#entre 0 y 1
-def rank_Cdnf(Query,documents,d_index):
-    Q_t = get_terms(Query)
-    Q = str(to_dnf(Query,simplify=True))
-    Q = Q.split("|")
-    product = 1
-    for cc in Q:
-        product*= rank_cc(cc,documents,Q_t,d_index)
-    return 1 - product
 
-def rank(Query,documents):
-    ranks = []
-    for i,d in enumerate(documents):
-        ranks.append(rank_Cdnf(Query,documents,i))
-    return sorted([(ranks[i],d.name) for i,d in enumerate(documents)],key=lambda x: x[0],reverse=True)
+    def get_fdnf(self,cc,Q_t,index):
+        if index == len(Q_t): return [copy(cc)]
+        term = Q_t[index]
+        neg_t = "~"+term
+        if neg_t in cc or term in cc:
+            return self.get_fdnf(cc,Q_t,index+1)
+        else:
+            cc.append(neg_t)
+            l = self.get_fdnf(cc,Q_t,index+1)
+            cc.pop()
+            cc.append(term)
+            r= l + self.get_fdnf(cc,Q_t,index+1)
+            cc.pop()
+            return r
+        
+
+    #entre 0 y 1
+    def rank_Cdnf(self,Query,d_index):
+        Q_t = self.get_terms(Query)
+        Q = str(to_dnf(Query,simplify=True))
+        Q = Q.split("|")
+        product = 1
+        for cc in Q:
+            product*= self.rank_cc(cc,Q_t,d_index)
+        return 1 - product
+
+    def rank(self,Query):
+        ranks = []
+        for i,_ in enumerate(self.documents):
+            ranks.append(self.rank_Cdnf(Query,i))
+        return sorted([(ranks[i],d.name) for i,d in enumerate(self.documents)],key=lambda x: x[0],reverse=True)
 
 # a ="A & (C | ~D)"
 # documents = [{"A": 0, "B":0, "C":1, "D": 0},
