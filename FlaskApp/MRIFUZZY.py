@@ -31,7 +31,7 @@ def show_entries():
         query = SearchQueryData(request.form)
         results, result_info = get_results(query.query.data,query.folder_path.data)
         print(results)
-        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]),result[0])for result in results]
+        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]),result[2], value=result[0])for result in results]
     elif request.method == 'GET':
         print('se hizo un get')
     return render_template('show_entries.html',

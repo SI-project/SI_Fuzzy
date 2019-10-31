@@ -37,9 +37,14 @@ class Reader():
         with open(filename, encoding='utf-8') as js:
             data_dict = json.load(js)
 
-        for _dict in data_dict:
-            for k in _dict.keys():
-                self.__save_data(_dict[k], k)
+        try:
+            data_dict[0]["title"]
+            for _dict in data_dict:
+                self.__save_data(_dict["narr"], _dict["title"], desc=_dict["desc"])
+        except:
+            for _dict in data_dict:
+                for k in _dict.keys():
+                    self.__save_data(_dict[k], k)
 
     def __readPdf(self, filename):
         name = filename.split("/")[-1]
@@ -59,19 +64,20 @@ class Reader():
 
         self.__save_data(data, name)
 
-    def __save_data(self, data, name):
+    def __save_data(self, data, name, desc=""):
         tokens = allPreprocess(data)
 
-        doc = Document(name)
+        doc = Document(name,description=desc)
         for elem in tokens:
             doc[elem] = 1
             self.vocab.add(elem)
         self.documents.append(doc)
 
 class Document(dict):
-    def __init__(self, name):
+    def __init__(self, name, description=""):
         super(dict,self).__init__()
         self.name = name
+        self.description = description
 
     def __getitem__(self, i):
         try:
