@@ -1,6 +1,6 @@
 import ply.yacc as yacc
-from .preprocess import queryProcess
-from .lexer_query import Lexer
+from fuzzy_model.preprocess import queryProcess
+from fuzzy_model.lexer_query import Lexer
 
 class Parser(object):
     def __init__(self, lexer_instance):
