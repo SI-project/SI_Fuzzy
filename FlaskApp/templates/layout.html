@@ -8,6 +8,10 @@
 
     <link href="../static/css/animate.css" rel="stylesheet">
     <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+    <script src="../static/js/jquery-2.1.1.js"></script>
+    <script src="../static/js/scripts.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -28,20 +32,6 @@
             </form>
 
         </div>
-{#            <ul class="nav navbar-top-links navbar-right">#}
-{#                <li>#}
-{#                    {% if session.logged_in %}#}
-{#                    <a href="/logout">#}
-{#                        <i class="fa fa-sign-out"></i> Log out#}
-{#                    </a>#}
-{#                    {% else %}#}
-{#                    <a href="{{ url_for('login')}}">#}
-{#                        <i class="fa fa-sign-in"></i> Log in#}
-{#                    </a>#}
-{#                    {% endif %}#}
-{#                </li>#}
-{#            </ul>#}
-
         </nav>
         </div>
             {% block body %} {% endblock %}
@@ -49,12 +39,41 @@
         </div>
 <div class="footer" style="position: unset">
             <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
+                Fill free to search<strong>Quick</strong>.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company © 2014-2015
+                <strong>Copyright</strong> Example Company © 2019-2020
             </div>
         </div>
+
+<script>
+$(document).ready(function() {
+    $(".relevance").click(function () {
+       var checks = count_relevants_results();
+        if (checks.length > 0)
+            $('#retro_count').text('Marked as relevant ' + checks.length + ' files');
+        else {
+            $('#retro_count').text("");
+        }
+
+    });
+    $("#retro-btn").click(function(){
+        var checks = count_relevants_results();
+        var dataToSend = JSON.stringify({ 'list': checks });
+  $.ajax({
+           contentType: 'application/json; charset=utf-8',
+           dataType: 'json',
+           type: 'POST',
+           url:  'http://127.0.0.1:5000/retro',
+           data: dataToSend,
+           success: function (data) {
+                console.log(data);
+           }
+       });
+});
+});
+</script>
+
 </body>
 </html>
 

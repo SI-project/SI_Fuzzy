@@ -17,6 +17,7 @@ def c_ij(i,j,documents):
     value = nij/(ni+nj-nij)
     if value > 1: raise Exception("i: {} j:{}, ni : {},nj: {},nij: {}".format(i,j,ni, nj, nij))
     return value
+
 #entre 0 y 1
 def term_fuzzy(term,doc,documents):
     product = 1
