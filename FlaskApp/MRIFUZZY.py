@@ -1,4 +1,4 @@
-from flask import Flask, request,render_template_string, session,redirect,url_for,abort,render_template,flash
+from flask import Flask, request,render_template_string, send_file,session,redirect,url_for,abort,send_from_directory,render_template,flash
 from utils import *
 from forms import SearchQueryData
 import os
@@ -21,12 +21,24 @@ def _get_results(query,files):
     result_info = GeneralResultInfo(10,1.0)
     return [ResultObject(name,url,description) for i in range(10)], result_info
 
+@app.route('/getfile')
+def getfile():
+    path = request.args['path']
+    print(path)
+    path = path.replace('@','/')
+    splited = path.split('/')
+    name_file = splited[-1]
+    name_directory = '/'.join([f'{i}/'for i in splited[:-1]])
+    print(name_directory,name_file)
+    return send_from_directory(name_directory,name_file)
+
 
 @app.route('/retro',methods=['POST'])
 def retro():
     checks = request.json['list']
     print('La lista de los checks: ',checks)
     return render_template_string('OK')
+
 
 @app.route('/',methods=['GET','POST'])
 def show_entries():
@@ -39,7 +51,7 @@ def show_entries():
         query = SearchQueryData(request.form)
         results, result_info = get_results(query.query.data,query.folder_path.data)
         print(results)
-        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]),result[2], value=result[0])for result in results]
+        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]).replace('/','@'),result[2], value=result[0])for result in results]
         initial = False
     return render_template('show_entries.html',
                            results=results,
