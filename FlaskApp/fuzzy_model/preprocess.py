@@ -38,9 +38,15 @@ def allPreprocess(text):
     tokens = lemmatizing(tokens)
     return tokens
 
-def queryProcess(text):
-    tokens = [text]
+def queryProcess(tokens):
+    # tokens = [text]
     tokens = lowercase(tokens)
     tokens = stemming(tokens)
     tokens = lemmatizing(tokens)
-    return tokens[0]
+    return "|".join(tokens)
+
+def lower_stemming(word):
+    token = [word]
+    token = lowercase(token)
+    token = stemming(token)
+    return token[0]
