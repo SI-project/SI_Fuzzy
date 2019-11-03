@@ -12,6 +12,7 @@ def get_results(query,folder_path):
     l = Lexer()
     p = Parser(l)
     query = p.parse(query)
+    print("=========== {}".format(query))
     initial_time = time.time()
     most_similar = rank(query, r.documents)
     final_time = time.time() - initial_time

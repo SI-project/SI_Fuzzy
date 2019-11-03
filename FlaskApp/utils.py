@@ -1,8 +1,9 @@
 class ResultObject:
-    def __init__(self,name,url, description):
+    def __init__(self,name,url, description, value = 0):
         self.name = name
         self.url = url
         self.description = description
+        self.value = value
 
 class UploaddedFolderInfo:
     def __init__(self,folder_name,cnt_files,folder_temp_path):

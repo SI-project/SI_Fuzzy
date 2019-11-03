@@ -1,7 +1,6 @@
 .dist
 .vscode
 *.pyc
-*.json
 *.pdf
 *.txt
 __pycache__

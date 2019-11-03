@@ -1,4 +1,4 @@
-from sympy.logic.boolalg import to_dnf
+from sympy import to_dnf
 from copy import copy
 
 #entre 0 y 1
@@ -17,6 +17,7 @@ def c_ij(i,j,documents):
     value = nij/(ni+nj-nij)
     if value > 1: raise Exception("i: {} j:{}, ni : {},nj: {},nij: {}".format(i,j,ni, nj, nij))
     return value
+
 #entre 0 y 1
 def term_fuzzy(term,doc,documents):
     product = 1
@@ -78,7 +79,7 @@ def rank(Query,documents):
     ranks = []
     for i,d in enumerate(documents):
         ranks.append(rank_Cdnf(Query,documents,i))
-    return sorted([(ranks[i],d.name) for i,d in enumerate(documents)],key=lambda x: x[0],reverse=True)
+    return sorted([(ranks[i],d.name,d.description) for i,d in enumerate(documents)],key=lambda x: x[0],reverse=True)
 
 # a ="A & (C | ~D)"
 # documents = [{"A": 0, "B":0, "C":1, "D": 0},

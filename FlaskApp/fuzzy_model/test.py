@@ -8,7 +8,7 @@ from random import choices
 #print(allPreprocess("Ant-Man"))
 r = Reader()
 r.readDirectory("./")
-query = "blog & firearm"
+query = "blog"
 l = Lexer()
 p = Parser(l)
 
@@ -18,5 +18,5 @@ print(query)
 most_similar = rank(query,r.documents)
 print(most_similar)
 
-keys= feedback.get_keywords(most_similar,"./",choices(most_similar[30:],k=20))
+keys= feedback.get_keywords(most_similar,"./",choices(most_similar[30:],k=int(len(most_similar)/2)))
 print(keys)

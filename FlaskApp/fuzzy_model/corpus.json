@@ -1,0 +1,572 @@
+[
+    {
+        "title": " jstor ",
+        "num": " Number: 901 ",
+        "desc": " Description:\nFind opinions on JSTOR, the system developed to make scholarly\njournals available from a digital archive.\n",
+        "narr": " Narrative:\nReports of difficulty or ease in using JSTOR are relevant opinions.  A\nstatement that one is lucky to have access or wishes to have access to\nJSTOR is a relevant opinion.  A statement that information is\navailable in JSTOR is not an opinion.  Simply citing JSTOR as a\nreference for a document is not an opinion.\n"
+    },
+    {
+        "title": " lactose gas ",
+        "num": " Number: 902 ",
+        "desc": " Description:\nFind opinions about lactose gas, related symptoms and remedies.\n",
+        "narr": " Narrative:\nAll opinions about lactose gas, its related symptoms and remedies are\nrelevant.\n"
+    },
+    {
+        "title": " \"Steve jobs\" ",
+        "num": " Number: 903 ",
+        "desc": " Description:\nFind documents stating opinions about Apple CEO Steve Jobs.\n",
+        "narr": " Narrative:\nRelevant documents will state opinions about Steve Jobs, the head of\nApple Computer.  Documents will include comments on his great success\nwith the iPod, his management style, and his unusual keynote\npresentations he gives at the introduction of new products.\n"
+    },
+    {
+        "title": " alterman ",
+        "num": " Number: 904 ",
+        "desc": " Description:\nFind opinions about author and columnist Eric Alterman.\n",
+        "narr": " Narrative:\nAny opinions about author/columnist and blogger Eric Alterman are\nrelevant.  Also pertinent are comments on positions Alterman has\ntaken on controversial subjects.\n"
+    },
+    {
+        "title": " king funeral ",
+        "num": " Number: 905 ",
+        "desc": " Description:\nFind documents that show opinions on the funeral of Coretta Scott King.\n",
+        "narr": " Narrative:\nOpinions on the political nature of speeches given by top government\nofficials and others at the funeral of the civil rights icon, Coretta\nScott King, are relevant.  Opinions on other aspects of the funeral are\nalso relevant.  Not relevant are mention of the King funeral in lists\nof news topics.\n"
+    },
+    {
+        "title": " davos ",
+        "num": " Number: 906 ",
+        "desc": " Description:\nFind opinions on the World Economic forum in Davos, Switzerland.\n",
+        "narr": " Narrative:\nRelevant documents will include opinions about the World Economic\nForum held annually in Davos, Switzerland, and the topics or people at\nthe most recent Forum.  Opinions on economic topics not connected with\nDavos are not relevant.\n"
+    },
+    {
+        "title": " brrreeeport ",
+        "num": " Number: 907 ",
+        "desc": " Description:\nFind opinions about the Brrreeeport experiment.\n",
+        "narr": " Narrative:\nRobert Scoble requested bloggers to attach the coined word brrreeeport\nto their blogs.  The purpose was to determine how soon that word would\nshow up on various search engines. Opinions of the experiment and its\nauthor are relevant.  Opinions of the Microsoft company, where Scoble\nworked, are not relevant.  Opinions regarding search engine reactions\nto brrreeeport are not relevant.\n"
+    },
+    {
+        "title": " \"carrie underwood\" ",
+        "num": " Number: 908 ",
+        "desc": " Description:\nFind opinions of singer Carrie Underwood.\n",
+        "narr": " Narrative:\nOpinions of singer Carrie Underwood, personally and of her singing\nability are relevant.  Opinions of songs she has written are also\nrelevant.  Statements regarding her appearance in any particular venue\ncan be relevant but do not necessarily imply an opinion.\n"
+    },
+    {
+        "title": " Barilla ",
+        "num": " Number: 909 ",
+        "desc": " Description:\nFind opinions on Barilla brand pasta or other foods.\n",
+        "narr": " Narrative:\nIndication of Barilla as one's brand of choice is a relevant opinion.\nThe simple statement that Barilla was used is not a relevant opinion\nbecause Barilla may have been all that was available.\n"
+    },
+    {
+        "title": " \"Aperto Networks\" ",
+        "num": " Number: 910 ",
+        "desc": " Description:\nFind opinions about either the company Aperto Networks or its\nproducts.\n",
+        "narr": " Narrative:\nAll opinions about either the company itself or the products produced\nby Aperto Networks are relevant.\n"
+    },
+    {
+        "title": " SCI FI CHANNEL ",
+        "num": " Number: 911 ",
+        "desc": " Description:\nFind opinions regarding the cable television Sci-Fi Channel.\n",
+        "narr": " Narrative:\nAll statements of opinion regarding the Sci-Fi Channel are\nrelevant. All statements regarding programming, such as show titles or\nreviews, are relevant provided the name Sci-Fi Channel is included.\n"
+    },
+    {
+        "title": " nasa ",
+        "num": " Number: 912 ",
+        "desc": " Description:\nFind opinions about NASA, the National Aeronautics and Space Administration.\n",
+        "narr": " Narrative:\nAll statements of opinion regarding the National Aeronautics and Space\nAdministration (NASA) are relevant. Statements of opinion about NASA\nprojects or programs are relevant provided that NASA is mentioned.\n"
+    },
+    {
+        "title": " sag awards ",
+        "num": " Number: 913 ",
+        "desc": " Description:\nFind opinions regarding the Screen Actors Guild Awards (SAG).\n",
+        "narr": " Narrative:\nAll statements of opinion regarding the Screen Actors Guild Awards are\nrelevant.  Statements of opinion regarding actors or other participants\nor film productions are relevant provided the Screen Actors Guild\nAwards or SAG are mentioned.\n"
+    },
+    {
+        "title": " northernvoice ",
+        "num": " Number: 914 ",
+        "desc": " Description:\nFind opinions about the Canadian blogging conference \"NorthernVoice.\"\n",
+        "narr": " Narrative:\nAll opinions expressed about the NorthernVoice blogging conference are\nrelevant, including comments by attendees and conference organizers.\n"
+    },
+    {
+        "title": " \"allianz\" ",
+        "num": " Number: 915 ",
+        "desc": " Description:\nFind opinions of the international insurance company Allianz.\n",
+        "narr": " Narrative:\nOpinions of the international insurance company Allianz and its\nbusiness and personnel practices are relevant.  Also, any opinions\nabout Allianz subsidiary companies or the process creating them are\npertinent.  Opinions about the Allianz Stadium are not relevant.\n"
+    },
+    {
+        "title": " dice.com ",
+        "num": " Number: 916 ",
+        "desc": " Description:\nFind opinions concerning dice.com, an on-line job search site. \n",
+        "narr": " Narrative:\nOpinions on dice.com's effectiveness are relevant. Mention of its\nproblems is relevant. Recounting an experience using dice.com is\nrelevant. Simply mentioning it as a possible tool is not relevant.\n"
+    },
+    {
+        "title": " snopes ",
+        "num": " Number: 917 ",
+        "desc": " Description:\nFind opinions on the urban legends reference site snopes.com.\n",
+        "narr": " Narrative:\nRecommendations to check snopes.com are relevant opinions.  Opinions\non the effectiveness of Snopes or the quality of its advice are\nrelevant.  A statement that Snopes confirms or debunks something is\nnot relevant by itself.  Opinions of stories or myths found on Snopes\nare not relevant.  Report of use of Snopes is not relevant.\n"
+    },
+    {
+        "title": " varanasi ",
+        "num": " Number: 918 ",
+        "desc": " Description:\nFind opinions about the city of Varanasi, India. \n",
+        "narr": " Narrative:\nRelevant opinions should be about the city of Varanasi and its people,\neither currently or historically.\n"
+    },
+    {
+        "title": " pfizer ",
+        "num": " Number: 919 ",
+        "desc": " Description:\nFind opinions of the drug company Pfizer and its products.\n",
+        "narr": " Narrative:\nAny opinion of the drug company Pfizer is relevant.  Opinions of\nPfizer products are also relevant. Statements that a Pfizer product is\nbeing used are not relevant unless accompanied by an opinion of like\nor dislike or the effectiveness of the product.\n"
+    },
+    {
+        "title": " \"andrew coyne\" ",
+        "num": " Number: 920 ",
+        "desc": " Description:\nFind opinions about the Canadian journalist Andrew Coyne.\n",
+        "narr": " Narrative:\nOpinions about the journalist Andrew Coyne himself and about his\nwritings are all relevant.\n"
+    },
+    {
+        "title": " \"Christianity Today\" ",
+        "num": " Number: 921 ",
+        "desc": " Description:\nFind opinions on the Evangelical Protestant magazine \"Christianity\nToday\".\n",
+        "narr": " Narrative:\nStatements of opinions regarding content from or descriptions of the\nEvangelical Protestant magazine \"Christianity Today\" are relevant.\n"
+    },
+    {
+        "title": " \"howard stern\" ",
+        "num": " Number: 922 ",
+        "desc": " Description:\nFind opinions of shock jock Howard Stern.  \t\t\n",
+        "narr": " Narrative:\nOpinions of Howard Stern and his radio program are relevant.  Comments\nand opinions expressed by Stern are not relevant.  Opinions expressed\nby guests on the program are relevant only if about Stern or the\nprogram but not if about the program's topic.  \n"
+    },
+    {
+        "title": " challenger ",
+        "num": " Number: 923 ",
+        "desc": " Description:\nFind opinions about the Challenger space shuttle disaster.\n",
+        "narr": " Narrative:\nRelevant opinions should be specifically about the space shuttle\nChallenger disaster event, not about other Challenger missions, crews,\nor the shuttle program generally.\n"
+    },
+    {
+        "title": " \"mark driscoll\" ",
+        "num": " Number: 924 ",
+        "desc": " Description:\nFind opinions about the evangelist Mark Driscoll.\n",
+        "narr": " Narrative:\nOpinions about Mark Driscoll include value judgments expressed about\nhis appearance, behavior or views (observed, inferred, or imputed).\nApparent distortions of fact about him constitute relevant opinions.\n"
+    },
+    {
+        "title": " mashup camp ",
+        "num": " Number: 925 ",
+        "desc": " Description:\nFind opinions about the first Mashup Camp event. \n",
+        "narr": " Narrative:\nRelevant opinions should be about the first real Mashup Camp event,\nother events that used that same name, and similar events focused on\nthe mashup approach to software-based services development.\nReferences to the mashup programming approach, per se, are not\nrelevant.\n"
+    },
+    {
+        "title": " hawthorne heights ",
+        "num": " Number: 926 ",
+        "desc": " Description:\nFind opinions on the band Hawthorne Heights, its music, or its members.\n",
+        "narr": " Narrative:\nOpinions on activities of the band's members are relevant.  The\npresence of the band's music in a playlist is not a relevant opinion.\nA decision to listen to the band's music or see the band in concert is\nnot an opinion.\n"
+    },
+    {
+        "title": " oscar fashion ",
+        "num": " Number: 927 ",
+        "desc": " Description:\nFind opinions on dresses or other garments worn at the Academy Awards,\nor fashions that are designed for Oscar night.\n",
+        "narr": " Narrative:\nPredictions of what will be worn or what designers will be represented\nare relevant opinions.  A statement that a garment is appropriate for\nthe Oscars is a relevant opinion.  Hairstyles are not relevant.  A\nstatement that a gown has been rejected, with no other information\nabout it, is not relevant.  Fashions for other award ceremonies are\nnot relevant. \"Oscar\" or \"Academy Award\" must be mentioned in\nconnection with clothing for a document to be relevant.\n"
+    },
+    {
+        "title": " \"big love\" ",
+        "num": " Number: 928 ",
+        "desc": " Description:\nFind opinions regarding the HBO television show \"Big Love\".\n",
+        "narr": " Narrative:\nAll statements of opinion regarding the HBO production \"Big Love\" are\nrelevant. Statements of opinion about HBO or actors in the show are\nrelevant provided that \"Big Love\" is mentioned.\n"
+    },
+    {
+        "title": " \"brand manager\" ",
+        "num": " Number: 929 ",
+        "desc": " Description:\nFind opinions about individual brand managers.\n",
+        "narr": " Narrative:\nRelevant opinions should be about individuals who are brand managers\nidentified by their name, product, brand or company, not about the\nbrand manager process generally.\n"
+    },
+    {
+        "title": " ikea ",
+        "num": " Number: 930 ",
+        "desc": " Description:\nFind opinions on Ikea or its products.\n",
+        "narr": " Narrative:\nRecommendations to shop at Ikea are relevant opinions.\nRecommendations of Ikea products are relevant opinions. Pictures on an\nIkea-related site that are not related to the store or its products\nare not relevant.\n"
+    },
+    {
+        "title": " fort mcmurray ",
+        "num": " Number: 931 ",
+        "desc": " Description:\nFind opinions on the Canadian oil boom town of Fort McMurray.\n",
+        "narr": " Narrative:\nOpinions about the people who make up the community are relevant.\nOpinions of Fort McMurray residents are not relevant unless the\nopinion concerns or reflects on the town.  Descriptions of the town\nthat show bias are relevant.\n"
+    },
+    {
+        "title": " goobuntu ",
+        "num": " Number: 932 ",
+        "desc": " Description:\nFind opinions expressed about the rumor that Google is planning\na desktop operating system named \"Goobuntu.\"\n",
+        "narr": " Narrative:\nAll opinions expressed about \"Goobuntu\" are relevant, regardless of\nthe fact that there was really no operating system by that name.\n"
+    },
+    {
+        "title": " \"winter olympics\" ",
+        "num": " Number: 933 ",
+        "desc": " Description:\nFind opinions on the Winter Olympics.\n",
+        "narr": " Narrative:\nAll statements of opinion about the Winter Olympic games are\nrelevant. Statements about the Summer Olympics are not relevant.\n"
+    },
+    {
+        "title": " cointreau ",
+        "num": " Number: 934 ",
+        "desc": " Description:\nFind opinions of the liqueur Cointreau and drinks or food containing\nCointreau.\n",
+        "narr": " Narrative:\nStatements regarding like or dislike of Cointreau are pertinent as are\nopinions about its addition to drinks or food items.  Opinions\nregarding the business practices of the company that owns Cointreau\nare not relevant.\n"
+    },
+    {
+        "title": " mozart ",
+        "num": " Number: 935 ",
+        "desc": " Description:\nFind opinions regarding the composer Wolfgang Amadeus Mozart.\n",
+        "narr": " Narrative:\nAll statements of opinion regarding the composer Wolfgang Amadeus\nMozart are relevant.  All statements of opinion regarding music\nauthored by Mozart are relevant.  Statements of opinions regarding\nevents, festivals, or publications using Mozart's name are relevant.\n"
+    },
+    {
+        "title": " grammys ",
+        "num": " Number: 936 ",
+        "desc": " Description:\nFind opinions regarding the Grammy awards.\n",
+        "narr": " Narrative:\nAll statements of opinion regarding the annual television Grammy\nawards are relevant.  Statements of opinions of contestants or\ntelevision productions are relevant provided the names \"Grammy\" or\n\"Grammys\" are mentioned in the statement.\n"
+    },
+    {
+        "title": " LexisNexis ",
+        "num": " Number: 937 ",
+        "desc": " Description:\nFind opinions about the information service LexisNexis.\n",
+        "narr": " Narrative:\nRelevant documents will provide opinions about the information service\nLexisNexis.  Documents that are obviously sponsored by LexisNexis are\nconsidered to be spam and not relevant.\n"
+    },
+    {
+        "title": " \"plug awards\" ",
+        "num": " Number: 938 ",
+        "desc": " Description:\nSearch for opinions about the \"Plug Awards\" annual award show.\n",
+        "narr": " Narrative:\nAll opinions are relevant, including those of promoters or attendees.\nThe \"Plug Awards\" show pits deserving independent and underground\nartists against each other.\n"
+    },
+    {
+        "title": " \"Beggin Strips\" ",
+        "num": " Number: 939 ",
+        "desc": " Description:\nFind opinions about Beggin' Strips brand dog snacks.\n",
+        "narr": " Narrative:\nAll opinions about Beggin' Strips dog treats are relevant.\n"
+    },
+    {
+        "title": " Lance Armstrong ",
+        "num": " Number: 940 ",
+        "desc": " Description:\nFind opinions about the seven-time Tour de France cyclist Lance\nArmstrong.\n",
+        "narr": " Narrative:\nAll opinions about Lance Armstrong are relevant, whether related to\nthe Tour de France race or not.\n"
+    },
+    {
+        "title": " \"teri hatcher\" ",
+        "num": " Number: 941 ",
+        "desc": " Description:\nFind opinions about the actress Teri Hatcher.\n",
+        "narr": " Narrative:\nAll statements of opinion regarding the persona or work of film and\ntelevision actress Teri Hatcher are relevant.\n"
+    },
+    {
+        "title": " lawful access ",
+        "num": " Number: 942 ",
+        "desc": " Description:\nFind documents providing opinions about lawful access by the\ngovernment to private files.\n",
+        "narr": " Narrative:\nRelevant documents will state opinions on whether or not government\nagents had lawful access to private files they have examined in recent\nyears.  These files included e-mails, library and phone records, etc.,\nof private U.S. citizens as well as aliens.  Documents about actions of\nboth Canadian and government agents are relevant.  Documents on\nInternet access are not relevant.\n"
+    },
+    {
+        "title": " censure ",
+        "num": " Number: 943 ",
+        "desc": " Description:\nFind opinions on bills in the U.S. Congress to censure President Bush\nand Vice-president Cheney.\n",
+        "narr": " Narrative:\nRelevant documents should include opinions on bills in the\nU.S. Congress, sponsored by Representative Conyers, to censure\nPresident Bush and Vice President Cheney.  Not relevant are actions to\ncensure other people or other countries, i.e. Iran in the UN.\n"
+    },
+    {
+        "title": " \"Opera Software\" OR \"Opera Browser\" OR \"Opera Mobile\" OR \"Opera Mini\" ",
+        "num": " Number: 944 ",
+        "desc": " Description:\nFind opinions about the \"Opera\" web browser. \n",
+        "narr": " Narrative:\nGeneral information about the Opera Browser and its features does not\nconstitute an opinion.  Simple links (e.g., \"Download the best and\nfastest...\") with no supporting text are also not relevant.  All other\nopinions about either the company or the Opera web browser product are\nrelevant.  For example, how does it compare with other browsers?  Is\nit faster?  More reliable?  Better features?  Liked or disliked?\n"
+    },
+    {
+        "title": " bolivia ",
+        "num": " Number: 945 ",
+        "desc": " Description:\nFind documents that show opinions about Bolivia.\n",
+        "narr": " Narrative:\nRelevant documents will state opinions about Bolivia and the\ngovernment headed by its new indigenous president, Evo Morales.\nDocuments that provide opinions about Bolivia other than its\ngovernment can be relevant, i.e. opinions about new businesses and\nchanged aspects of a city.\n"
+    },
+    {
+        "title": " tivo ",
+        "num": " Number: 946 ",
+        "desc": " Description:\nFind opinions about TIVO brand digital video recorders\n",
+        "narr": " Narrative:\nRelevant opinions should be about TIVO technology, functionality,\nmarketing, benefits to users, and comparisons with similar products.\n"
+    },
+    {
+        "title": " sasha cohen ",
+        "num": " Number: 947 ",
+        "desc": " Description:\nFind opinions about Olympic figure skater Sasha Cohen. \n",
+        "narr": " Narrative:\nAll opinions expressed about figure skater Sasha Cohen are\nrelevant.  She should not be confused with Sacha Baron Cohen.\n"
+    },
+    {
+        "title": " sorbonne ",
+        "num": " Number: 948 ",
+        "desc": " Description:\nFind opinions about the Sorbonne.\n",
+        "narr": " Narrative:\nDocuments that state opinions about the Sorbonne University in Paris\nare relevant.  Mention of books written by professors currently at the\nSorbonne, or notations about persons having studied or given speeches\nthere are not relevant.\n"
+    },
+    {
+        "title": " ford bell ",
+        "num": " Number: 949 ",
+        "desc": " Description:\nFind opinions of Minnesota veterinarian and political candidate Ford\nBell.\n",
+        "narr": " Narrative:\nOpinions of Ford Bell's character and his viability as a political\ncandidate are relevant.  Opinions of him as a veterinarian are also\nrelevant.  Opinions of the actions of other political elements that\naffected Ford's candidacy are not relevant.\n"
+    },
+    {
+        "title": " Hitachi Data Systems ",
+        "num": " Number: 950 ",
+        "desc": " Description:\nLocate opinions about either the Hitachi Data Systems company or its\nproducts.\n",
+        "narr": " Narrative:\nAll opinions about Hitachi Data Systems are relevant, including those\nexpressed in advertising by the company itself, with the exception of\nspam.\n"
+    },
+    {
+        "title": "Mutual Funds",
+        "num": "Number: 951",
+        "desc": " Description:\nBlogs about mutual funds performance and trends.\n",
+        "narr": " Narrative:\nRatings from other known sources (Morningstar) or relative to key\nperformance indicators (KPI) such as inflation, currency markets and\ndomestic and international vertical market outlooks. News about mutual\nfunds, mutual fund managers and investment companies. Specific\nrecommendations should have supporting evidence or facts linked from\nknown news or corporate sources. (Not investment spam or pure,\nuninformed conjecture.)\n"
+    },
+    {
+        "title": " movie review ",
+        "num": "Number: 952",
+        "desc": " Description:\nBlogs dealing with actors, movie previews, individual's movie critics\nand recommendations.\n",
+        "narr": " Narrative:\nRelevant blogs will introduce story details of a movie and\nindividual's favorite stars and genres.  Blogs with biography of\nactors are also the focus of interest.  Not relevant are blog or shops\nwhich offers online downloads.\n"
+    },
+    {
+        "title": "Biofuels may damage forests",
+        "num": "Number: 953",
+        "desc": " Description:\nHow the production of biofuels may damage the world's forests.\n",
+        "narr": " Narrative:\nRelevant blogs will discuss the possibility that forests, particularly\ntropical forests, may be destroyed to make way for biofuel\ncrops. Examples of forest destruction are relevant. Discussion of\ntechnology involved in the production of biofuels are not relevant,\nunless they also include comment on the effect on forests.\n"
+    },
+    {
+        "title": "Mac",
+        "num": "Number: 954",
+        "desc": " Description:\nBlogs describing new products, features, or application software of\nApple's Macintosh computers.\n",
+        "narr": " Narrative:\nRelevant blogs post regularly about new products, features, or\napplication software of Apple Mac computers. Not those about MAC\n(media access control) address or a cosmetic brand.\n"
+    },
+    {
+        "title": "mobile phone",
+        "num": "Number: 955",
+        "desc": " Description:\nBlogs describe individual's experiences and impressions using mobile\nphones and testing new features.  \n",
+        "narr": " Narrative:\nRelevant blogs contains an overview of features relating to a mobile\n(cell) phone.  In doing so, the blogs compares different mobile phones\nand disclose announcements of mobile network provider or\nmanufacturers. Not relevant are blogs with intention to sell online or\noffer ring tone downloads and mobile phones.\n"
+    },
+    {
+        "title": "Firearm Control",
+        "num": "Number: 956",
+        "desc": " Description:\nBlogs related to the firearm control debate.\n",
+        "narr": " Narrative:\nContains blogs about the gun control debate (i.e., to what extent\nshould governments regulate the transaction of firearms?). Contains\nblogs pro and/or against gun control. Blogs must discuss gun control\nas the central topic, including, but not limited to, anecdotal\nreference, reasons for/against gun control, reference to statistics\nand news stories related to guns, and opinions people or organizations\ncentral to the gun control debate.\n\nFeeds about firearm collecting and sports hunting, of which guns and\ngun control is an important, but not central aspect, are\nirrelevant. Feeds about liberal vs. conservative political\naffiliations, on which gun control is also one aspect, are also\nirrelevant. Feeds that contain only a few blogs about gun control are\nirrelevant.\n\nThis topic could represent a political figure that wants to understand\nboth sides of the gun control debate.  \n"
+    },
+    {
+        "title": "Russia",
+        "num": "Number: 957",
+        "desc": " Description:\nBlogs with information on or news about Russia.\n",
+        "narr": " Narrative:\nRelevant blogs contain posts about the country Russia, Russian\npolitics, companies and everyday life in Russia. Blogs that consist of\nnews posts, some of them about Russia, are not considered\nrelevant. The same goes for blogs mentioning some famous Russians as\npart of a overall topic (e.g. Russian tennis players as part of a\nsports blog).\n"
+    },
+    {
+        "title": "global warming",
+        "num": "Number: 958",
+        "desc": " Description:\nBlogs providing information about some causes of global warming and\nthe climate change.\n",
+        "narr": " Narrative:\nRelevant blogs will post regularly about study and news about global\nwarming and the climate change. Relevant blogs can introduce other\nresources about global warming such as films or events. Besides, blogs\nabout the green house effect, the emissions of carbon dioxide or the\nKyoto protocol are also relevant. Blogs which only have a few posts\nabout global warming are not relevant.\n"
+    },
+    {
+        "title": "Bipolar disorder",
+        "num": "Number: 959",
+        "desc": " Description:\nDescriptions of the symptoms and treatment of bipolar disorder are\nrelevant.\n",
+        "narr": " Narrative:\nBlogs are relevant if they describe the symptoms of bipolar\ndisorder. They are relevant if they discuss possible treatments and\ntheir effectiveness. Blogs on mental health in general are not\nrelevant \n"
+    },
+    {
+        "title": "garden",
+        "num": "Number: 960",
+        "desc": " Description:\nBlogs describing garden or gardening.\n",
+        "narr": " Narrative:\nRelevant blogs post regularly about garden or gardening as a\nhobby.  Those merely promoting the sale of gardening tools or\nproducts are not relevant.\n"
+    },
+    {
+        "title": "Disney World",
+        "num": "Number: 961",
+        "desc": " Description:\nBlogs describing events, rides, facilities of Disney World.\n",
+        "narr": " Narrative:\nRelevant blogs post regularly about events, rides, facilities of Walt\nDisney World Resort in Orland, Florida. They may have articles about\nother Disneyland parks in L.A., Tokyo, France, and Hong Kong, but must\nhave those about Disney World in Orlando.\n"
+    },
+    {
+        "title": "baseball",
+        "num": "Number: 962",
+        "desc": " Description:\nBlogs with recurring interests in Major League Baseball, or lesser\nleagues, for example, giving news or analysis of games or player\nmoves.  \n",
+        "narr": " Narrative:\nRelevant blogs will have news or analysis from the major league\nbaseball and other leagues.  Blogs listing only product reviews, or\nwith other nonsensical information are not relevant.\n"
+    },
+    {
+        "title": "Nintendo DS",
+        "num": "Number: 963",
+        "desc": " Description:\nBlogs that provide information about developments on the Nintendo DS\ngaming system.\n",
+        "narr": " Narrative:\nNews about Nintendo and their portable gaming systems, specifically\nthe Nintendo DS. New game releases for the DS, both in the US and\ninternationally. Press releases and announcements from game companies\nand for gaming conferences. News about innovative uses of the DS\n(homebrew) and user-created content and games. Deals and sales on\nNintendo DS systems and games, but *less* interest in \"buy now\" types\nof links or obviously repurposed affiliate links to game shopping\nsites.\n"
+    },
+    {
+        "title": "Violence in Sudan",
+        "num": "Number: 964",
+        "desc": " Description:\nBlogs about the unrest and violence in Sudan.\n",
+        "narr": " Narrative:\nRelevant blogs discuss events and/or debate opinions about the violent\nsituation in Sudan, Africa. Relevant blogs may originate from advocacy\ngroups from the international community, from volunteer workers\nstationed in Sudan, or from anyone discussing news related to the\nunrest in Sudan.\n\nBlogs that discuss violence and unrest in other areas of the world,\nincluding countries in Africa other than Sudan are not relevant.\n"
+    },
+    {
+        "title": "Peak Oil",
+        "num": "Number: 965",
+        "desc": " Description:\nNews, analysis and discussion about oil and energy production issues.\n",
+        "narr": " Narrative:\nLinks and analysis of economic indicators from the energy industry,\nexploratory geology research and other sources that provide boundary\ninformation on oil extraction, refinement and distribution in the\nworld. More specifically, future impacts for the United States, OPEC\ninitiatives and policies, North Sea and offshore drilling, Pacific rim\ndevelopment, Chinese oil consumption growth and South American\n(Venezuela) stability and reliability. Speculation and catastrophic\nprediction blogs are to be avoided.\n"
+    },
+    {
+        "title": "Vacation Travel",
+        "num": "Number: 966",
+        "desc": " Description:\nBlogs discuss travel deals, travel recommendations, travel logs\nfor someone planning a vacation.\n",
+        "narr": " Narrative:\nBlogs discuss travel in a broad sense, including travel planning,\nbudget planning, promotions, scheduling, recommendations, travel logs,\netc.  Relevant feeds would be useful to someone who is planning a\nvacation.  \n"
+    },
+    {
+        "title": "home baking",
+        "num": "Number: 967",
+        "desc": " Description:\nBlogs introducing recipes or tools for baking cookies, cakes, pies and\nbread at home.\n",
+        "narr": " Narrative:\nRelevant blogs will post regularly about introducing recipes or tools\nfor home baking. Here, home baking means that amateur bakers rather\nthan professional bakers bake cookies, cakes, pies and bread at home\nwith their own tools. Blogs which only have a few posts about home\nbaking are not relevant.\n"
+    },
+    {
+        "title": "christmas",
+        "num": "Number: 968",
+        "desc": " Description:\nRelevant blogs will post individuals' stories about Christmas.\n",
+        "narr": " Narrative:\nBlogs describing individual's bad and good experiences preparing for\nchristmas and spending the christmas holidays. People are willing to\nshare their impressions decorating christmas tree, exchanging gifts,\nspending time with family etc.  But also historical and traditional\npersons such as Santa Claus, yule, etc. are parts of these blogs. \nBlogs about shopping or gift ideas are not relevant.\n"
+    },
+    {
+        "title": "planet",
+        "num": "Number: 969",
+        "desc": " Description:\nBlogs describing planets or celestial bodies.\n",
+        "narr": " Narrative:\nRelevant blogs post regularly about planets or celestial bodies.\n"
+    },
+    {
+        "title": "Hurricane Katrina",
+        "num": "Number: 970",
+        "desc": " Description:\nBlogs reporting on the results of Hurricane Katrina and relief\nefforts.\n",
+        "narr": " Narrative:\nDescriptions and photos of the damage caused by Hurricane Katrina are\nrelevant. Reports on responses to the storm by government agencies and\nother organizations are also relevant. Discussions about other\nhurricanes are not relevant.\n"
+    },
+    {
+        "title": "Wine",
+        "num": "Number: 971",
+        "desc": " Description:\nBlogs about tasting and enjoying wine.\n",
+        "narr": " Narrative:\nRelevant feeds will treat issues related to wine enjoyment such as\ntastings, reviews, food matching or pairing, and oenophile news and\nevents.  Discussions of appellations and more general wine regions\nare also appropriate if expressed in the context of wine production\nor winemaking.\n"
+    },
+    {
+        "title": "google maps earth",
+        "num": "Number: 972",
+        "desc": " Description:\nBlogs with an interest in the Google products Google earth and Google Maps.\n",
+        "narr": " Narrative:\nBlogs will give discussion about new features or ways to integrate\nGoogle Earth in interesting ways. Blogs which only describe the\nrelease of new Google Earth version are not relevant.\n"
+    },
+    {
+        "title": "Autism",
+        "num": "Number: 973",
+        "desc": " Description:\nBlogs about autism: typical behavior and possible causes of this\ndisorder.\n",
+        "narr": " Narrative:\nRelevant blogs will describe typical behavior of those suffering from\nthis disorder. Theories on possible causes are also relevant, as are\nreports on its increasing prevalence, and current ideas on treatment\n"
+    },
+    {
+        "title": "tennis",
+        "num": "Number: 974",
+        "desc": " Description:\nBlogs with information on tennis, tournaments and players.\n",
+        "narr": " Narrative:\nRelevant blogs contain mainly posts about tennis; these could either\nbe posts about (a) certain player(s), or in more general about tennis\ntournaments and results. We do not want blogs about table tennis, nor\ngeneral sports blogs.\n"
+    },
+    {
+        "title": "food",
+        "num": "Number: 975",
+        "desc": " Description:\nBlogs describing experiences eating cuisines, culinary delights,\nrecipes, nutrition plans.   \n",
+        "narr": " Narrative:\nRelevant blogs will contain recipes, culinary delights, habits of\neating or government food policies. Also individual's taste for foods\nare discussed in the blogs. Not relevant are any recommendations to\nfood shops for human or animals.\n"
+    },
+    {
+        "title": "NYC restaurants",
+        "num": "Number: 976",
+        "desc": " Description:\nBlogs describing experiences about restaurants in New York City.\n",
+        "narr": " Narrative:\nRelevant blogs will post regularly about experiences in restaurants in\nNew York City, NY, USA. Relevant blogs might contain ratings, news and\ninformation about price and location of the restaurants. Restaurants\ninclude real restaurants, stalls selling food, bars and pubs. Blogs\nwhich only have a few posts about restaurants are not relevant.\n"
+    },
+    {
+        "title": "Digital TV",
+        "num": "Number: 977",
+        "desc": " Description:\nBlogs which give information about digital TV products and related\nservices.\n",
+        "narr": " Narrative:\nBlogs are relevant that give information on digital TV, current\ntechnology and descriptions of available products. Users' reports on\nthe quality of these products are relevant. Government policy on the\nchange from analogue to digital TV is also relevant.\n"
+    },
+    {
+        "title": "music",
+        "num": "Number: 978",
+        "desc": " Description:\nBlogs describing songs, biographies of musicians, musical styles and\ntheir influences of music on people are discussed.\n",
+        "narr": " Narrative:\nRelevant are blogs describing biography and style of the\nmusicians. Also definitions of musician and music styles are\nimportant. Not relevant are blogs with online downloads.\n"
+    },
+    {
+        "title": "lighting",
+        "num": "Number: 979",
+        "desc": " Description:\nBlogs describing any light fixtures.\n",
+        "narr": " Narrative:\nRelevant blogs post regularly about light fixtures and/or writer's\nopinion on it.\n"
+    },
+    {
+        "title": "stock trading",
+        "num": "Number: 980",
+        "desc": " Description:\nBlogs providing information and techniques for stock trading.\n",
+        "narr": " Narrative:\nRelevant blogs will post regularly about stock market trends,\ninformation about individual stocks, techniques for stock\ntrading. Relevant blogs might contain posts describing experiences in\na stock market such as trading diaries with charts. Blogs which\ncontain only news are not relevant. Blogs which only have a few posts\nabout stock trading are not relevant.\n"
+    },
+    {
+        "title": "indie rock",
+        "num": "Number: 981",
+        "desc": " Description:\nBlogs introducing independent underground rock bands, their albums and\nevents.\n",
+        "narr": " Narrative:\nRelevant blogs will post regularly about independent underground rock\nbands, their albums and events. Relevant blogs contain reviews about\nthe indie rock bands, albums or performances. Relevant blogs might\nintroduce the history and the culture of indie rock. Blogs which\ncontain information only about popular major rock bands are not\nrelevant. Blogs which only have a few posts about indie rock are not\nrelevant.\n"
+    },
+    {
+        "title": "machine learning",
+        "num": "Number: 982",
+        "desc": " Description:\nBlogs with an interest in the machine learning research area and it's\napplications.\n",
+        "narr": " Narrative:\nBlogs with an interest in the machine learning research area and its\napplications, including problems such as regression, supervised or\nunsupervised learning.\n"
+    },
+    {
+        "title": "photography",
+        "num": "Number: 983",
+        "desc": " Description:\nBlogs describing experience using camera and photography techniques to\ncatch moments and memories.  Additionally, tips and success criteria\nto make photos are discussed.\n",
+        "narr": " Narrative:\nIndividual's philosophy and experiences using photography techniques\nare main focus of relevant blogs.  Irrelevant are blogs are\nphotography stores and link farms.\n"
+    },
+    {
+        "title": "DSLR camera review",
+        "num": "Number: 984",
+        "desc": " Description:\nBlogs providing reviews and news about Digital SLR cameras, lens and\nthe accessories.\n",
+        "narr": " Narrative:\nRelevant blogs will post regularly reviews and news about Digital SLR\ncameras, lens and the accessories. Blogs which cover only film cameras\nor compact digital cameras are not relevant. Blogs which post only\nnews without any review are not relevant, either. The accessories\nmight include various stuffs such as flashes, tripods, filters, bags\nor software packages. Blogs which only have a few posts about Digital\nSLR cameras and lens are not relevant.\n"
+    },
+    {
+        "title": "solaris",
+        "num": "Number: 985",
+        "desc": " Description:\nBlogs describing experiences administrating the Solaris operating\nsystem, or it's new features or developments.\n",
+        "narr": " Narrative:\nRelevant blogs will post regularly about administrating or using the\nSolaris operating system from Sun, it's latest features or\ndevelopments. Blogs with posts about Solaris the movie are not\nrelevant, not are blogs which only have a few posts Solaris.\n"
+    },
+    {
+        "title": "Apple iPod",
+        "num": "Number: 986",
+        "desc": " Description:\nBlogs describing all aspects of all models of the Apple iPod\n",
+        "narr": " Narrative:\nBlogs related to the Apple iPod, including all the models of the iPod\n(e.g., the Nano, the Shuffle). Discusses features, defects,\nworkarounds, and accessories for any model of the iPod. Such feeds\nwould be relevant to someone who just purchased an iPod. Does not\ninclude blogs that discuss the iPod peripherally, such as blogs about\nApple's performance as a company or blogs about all of Apple's\nproducts (e.g., iBook, iMac, iPhone, etc.). Relevant blogs must be\ncentered on the iPod only.\n"
+    },
+    {
+        "title": "scottish independence",
+        "num": "Number: 987",
+        "desc": " Description:\nBlogs describing progress (or lack) towards Scottish independence, or\nthe rise of the Scottish Nationalist Party (SNP).\n",
+        "narr": " Narrative:\nRelevant blogs will have a central theme around the independence\naspects of Scottish politics, the Scottish Nationalist Party, and the\nparticulars of the devolved Scottish parliament with a view to an\nindependent Scotland.  Feeds of Scottish newspapers are not relevant.\n"
+    },
+    {
+        "title": "Robot companions",
+        "num": "Number: 988",
+        "desc": " Description:\nBlogs are relevant which describe robot companions that assist humans\nin every day tasks.\n",
+        "narr": " Narrative:\nRelevant blogs describe robots that can help individuals with everyday\ntasks in or out of the home, such as acting as shopping assistants, or\nacting as companions. They must be about robot interaction with\nordinary people. Blogs are not relevant if they describe robot\nactivity without the purpose of assisting individual humans. They are\nnot relevant if they describe the use of robots for military,\npolicing, or manufacturing purposes.\n"
+    },
+    {
+        "title": "Space Exploration",
+        "num": "Number: 989",
+        "desc": " Description:\nBlogs discuss events/opinions related to actual or hypothetical\nspace exploration.\n",
+        "narr": " Narrative:\nRelevant blogs discuss events/opinions related to human\nexploration of space. Relevant blogs discuss events related to ongoing\nor future space missions, news related to space agencies worldwide\n(e.g., NASA, ESA, etc.), the politics of space exploration, or even\nthe philosophical aspects of space exploration. Feeds centered on\nprofessional or amateur astronomy or astrophysics are not\nrelevant. \n"
+    },
+    {
+        "title": "lost tv",
+        "num": "Number: 990",
+        "desc": " Description:\nBlogs that discuss the tv show, \"Lost\".\n",
+        "narr": " Narrative:\nThe relevant blogs discuss the TV show \"Lost\" regularly. Blogs that\ndon't discuss this TV show often are regarded as not relevant. Also,\nlost TV's are not regarded as relevant.\n"
+    },
+    {
+        "title": "U.S. Election 2008",
+        "num": "Number: 991",
+        "desc": " Description:\nBlogs about the United States 2008 presidential election.\n",
+        "narr": " Narrative:\nRelevant blogs discuss news and opinions about the actual and/or\npotential candidates for the US 2008 presidential election, discussion\non candidates' political strategy, and controversy. Relevant feeds\nmay discuss a single presidential candidate, several candidates that\nshare a political affiliation, or the 2008 election in general.  A\nrelevant feed may even be maintained or endorsed by an actual\npresidential candidate (i.e., is undeniably biased), as long as the\nmain focus is that person's (potential) participation in the 2008\nelection.\n\nBlogs that more generally debate for/against a specific political\nviewpoint (e.g., conservative vs. liberal) or political party\naffiliation (e.g., Republican vs. Democrat), but do not focus on the\n2008 presidential election, are irrelevant.\n"
+    },
+    {
+        "title": "Copyright law",
+        "num": "Number: 992",
+        "desc": " Description:\nBlogs that discuss effects and changes of copyright law.\n",
+        "narr": " Narrative:\nNews and opinions focused on copyright law, including effects on private\nand public practice. Blogs that track copyright legislation up before a\ngoverning body (legislator, court, treaty-making organization) and\nprovide news or opinion about those changes. Avoid too much emphasis on\nother types of related law (patent, trademark, trade secrets).\n"
+    },
+    {
+        "title": "buffy the vampire slayer",
+        "num": "Number: 993",
+        "desc": " Description:\nBlogs that discuss the television program \"Buffy The Vampire Slayer\".\n",
+        "narr": " Narrative:\nThe relevant blogs discuss the TV show \"Buffy the Vampire Slayer\", or\nthe comic books based on this show regularly. Blogs that don't discuss\nthis TV show often are regarded as not relevant. Also, blogs about the\nband Slayer, or about Vampires in general are not regarded as being\nrelevant.\n"
+    },
+    {
+        "title": "formula f1",
+        "num": "Number: 994",
+        "desc": " Description:\nBlogs with interest in the formula one (f1) motor racing, perhaps with\ndriver news, team news, or event news.  \n",
+        "narr": " Narrative:\nRelevant blogs will contain news and analysis from the Formula f1\nmotor racing circuit. Blogs with documents not in English are not\nrelevant.\n"
+    },
+    {
+        "title": "ruby on rails",
+        "num": "Number: 995",
+        "desc": " Description:\nBlogs that discuss the Ruby On Rails framework.\n",
+        "narr": " Narrative:\nThe relevant blogs discuss the Ruby On Rails framework.\n"
+    }
+]

@@ -41,7 +41,7 @@
                                     {% endif %}
                                     <label>{{ query_form.folder_path.label }}</label>
                                     <div class="input-group">
-                                        {{ render_field(query_form.folder_path, class='form-control input-lg')}}
+                                            {{ render_field(query_form.folder_path, class='form-control input-lg')}}
                                     </div>
                                 {% if query_form.folder_path.errors %}
                                     <ul>
@@ -50,17 +50,30 @@
                                     {% endfor %}
                                     </ul>
                                 {% endif %}
+                                {% if not initial %}
+                                <button class="btn btn-group-lg btn-primary" id="retro-btn"
+                                        style="margin-top: 2%" type="button">Retro-alimentation</button>
+                                {% endif %}
+                                <div>
+                                    <h5 id="retro_count"></h5>
+                                </div>
+
                                 </form>
                             </div>
                             <div class="hr-line-dashed"></div>
                         <div id="set-search-results">
                             {% for result in results %}
                                 <div class="search-result">
-                                <h3><a href="{{ result.url }}">{{ result.name }}</a></h3>
+                                <h3><a href="{{ result.url }}" class="file_result">{{ result.name }}</a></h3>
                                 <a href="{{ result.url }}" class="search-link"></a>
                                 <p>
                                     {{ result.description }}
                                 </p>
+                                <label>{{result.value}}</label>
+                                <div class="checkbox checkbox-success">
+                                    <input class="relevance" id="checkbox-relevant_{{ result.name }}" type="checkbox" result_name="{{ result.name }}">
+                                    <label for="checkbox-relevant_{{ result.name }}">Mark as relevant</label>
+                                </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
                             {% endfor %}

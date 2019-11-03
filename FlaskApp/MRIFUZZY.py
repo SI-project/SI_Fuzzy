@@ -1,4 +1,4 @@
-from flask import Flask, request, session,g,redirect,url_for,abort,render_template,flash
+from flask import Flask, request,render_template_string, session,redirect,url_for,abort,render_template,flash
 from utils import *
 from forms import SearchQueryData
 import os
@@ -21,23 +21,31 @@ def _get_results(query,files):
     result_info = GeneralResultInfo(10,1.0)
     return [ResultObject(name,url,description) for i in range(10)], result_info
 
+
+@app.route('/retro',methods=['POST'])
+def retro():
+    checks = request.json['list']
+    print('La lista de los checks: ',checks)
+    return render_template_string('OK')
+
 @app.route('/',methods=['GET','POST'])
 def show_entries():
     query = SearchQueryData(request.form)
     results = []
     result_info = GeneralResultInfo(0, 0.0)
+    initial = True
     if request.method == "POST" and query.validate():
         print('Se hizo un post')
         query = SearchQueryData(request.form)
         results, result_info = get_results(query.query.data,query.folder_path.data)
         print(results)
-        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]),result[0])for result in results]
-    elif request.method == 'GET':
-        print('se hizo un get')
+        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]),result[2], value=result[0])for result in results]
+        initial = False
     return render_template('show_entries.html',
                            results=results,
                            result_info=result_info,
-                           query_form=query)
+                           query_form=query,
+                           initial=initial)
 
 
 if __name__ == '__main__':
