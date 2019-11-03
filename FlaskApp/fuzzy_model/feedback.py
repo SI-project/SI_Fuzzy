@@ -1,7 +1,7 @@
-from util import *
-from reader import Reader
+from fuzzy_model.util import *
+from fuzzy_model.reader import Reader
 import numpy as np
-from preprocess import allPreprocess
+from fuzzy_model.preprocess import allPreprocess
 
 
 def get_vocabulary(documents):

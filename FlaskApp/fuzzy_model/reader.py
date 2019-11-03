@@ -1,6 +1,6 @@
 import PyPDF2
 import json
-from preprocess import allPreprocess
+from fuzzy_model.preprocess import allPreprocess
 from os import listdir
 from os.path import isfile, join
 class Reader():
