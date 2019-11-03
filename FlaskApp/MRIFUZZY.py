@@ -24,7 +24,8 @@ def _get_results(query,files):
 
 @app.route('/retro',methods=['POST'])
 def retro():
-    checks = request.json['list']
+    checks = request.form['list']
+    checks = checks.split(",")
     print('La lista de los checks: ',checks)
     return render_template_string('OK')
 

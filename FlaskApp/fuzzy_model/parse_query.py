@@ -55,7 +55,7 @@ class Parser(object):
         term : ID
         """
         w_modify = lower_stemming(p[1])
-        sinom = self.word_sinom[w_modify] + [w_modify]
+        sinom = [w_modify] + self.word_sinom[w_modify][:2]
         word = queryProcess(sinom)
         p[0] = "({})".format(word)
 
