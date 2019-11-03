@@ -59,17 +59,15 @@ $(document).ready(function() {
     });
     $("#retro-btn").click(function(){
         var checks = count_relevants_results();
-        var dataToSend = JSON.stringify({ 'list': checks });
-  $.ajax({
-           contentType: 'application/json; charset=utf-8',
-           dataType: 'json',
-           type: 'POST',
-           url:  'http://127.0.0.1:5000/retro',
-           data: dataToSend,
-           success: function (data) {
-                console.log(data);
-           }
-       });
+        var string_check = checks[0];
+        for (let i = 1; i < checks.length; i++) {
+            const element = checks[i];
+            string_check += "," + element;
+        } 
+        console.log(string_check);
+        $.post("http://127.0.0.1:5000/retro", {'list': string_check}, function(result){
+            console.log(data);
+        });
 });
 });
 </script>

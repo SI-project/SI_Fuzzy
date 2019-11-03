@@ -24,23 +24,37 @@ def stemming(token_list):
     ps = PorterStemmer()
     return list(set([ps.stem(w) for w in token_list]))
 
-def lemmatizing(token_list):
-    lemmatizer = WordNetLemmatizer()
-    return [lemmatizer.lemmatize(w) for w in token_list]
+def stemming_no_contraction(token_list):
+    ps = PorterStemmer()
+    
+    return [ps.stem(w) for  w in token_list]
 
-def allPreprocess(text):
+def lemmatizing(token_list):
+    #lemmatizer = WordNetLemmatizer()
+    #return [lemmatizer.lemmatize(w) for w in token_list]
+    return token_list
+
+def allPreprocess(text,contract=True):
     tokens = tokenize(text)
     tokens = lowercase(tokens)
     tokens = punctuations(tokens)
     tokens = numbers(tokens)
     tokens = stopWords("english", tokens)
-    tokens = stemming(tokens)
+    if contract:
+        tokens = stemming(tokens)
+    else: tokens = stemming_no_contraction(tokens)
     tokens = lemmatizing(tokens)
     return tokens
 
-def queryProcess(text):
-    tokens = [text]
+def queryProcess(tokens):
+    # tokens = [text]
     tokens = lowercase(tokens)
     tokens = stemming(tokens)
     tokens = lemmatizing(tokens)
-    return tokens[0]
+    return "|".join(tokens)
+
+def lower_stemming(word):
+    token = [word]
+    token = lowercase(token)
+    token = stemming(token)
+    return token[0]

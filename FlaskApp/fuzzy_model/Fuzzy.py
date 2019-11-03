@@ -1,4 +1,4 @@
-from sympy.logic.boolalg import to_dnf
+from sympy import to_dnf
 from copy import copy
 
 #entre 0 y 1

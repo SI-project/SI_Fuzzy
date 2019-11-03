@@ -1,12 +1,14 @@
 import ply.yacc as yacc
-from fuzzy_model.preprocess import queryProcess
+from fuzzy_model.preprocess import queryProcess, lower_stemming
 from fuzzy_model.lexer_query import Lexer
-
+import json
 class Parser(object):
     def __init__(self, lexer_instance):
         self.lexer = lexer_instance.lexer
         self.tokens = list(lexer_instance.tokens)
 
+        with open("./fuzzy_model/tesauro.json",'r') as fd:
+            self.word_sinom = json.load(fd)
         self.parser = yacc.yacc(start='program', module=self)
 
     def parse(self, text):
@@ -52,8 +54,10 @@ class Parser(object):
         """
         term : ID
         """
-        word = queryProcess(p[1])
-        p[0] = word
+        w_modify = lower_stemming(p[1])
+        sinom = [w_modify] + self.word_sinom[w_modify][:2]
+        word = queryProcess(sinom)
+        p[0] = "({})".format(word)
 
     def p_logic(self, p):
         """
@@ -64,4 +68,5 @@ class Parser(object):
 
 # l = Lexer()
 # p = Parser(l)
-# form = p.parse("iron & gaming&(~Spider | any)")
+# form = p.parse("blogs & test")
+# print(form)
