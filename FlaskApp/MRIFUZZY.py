@@ -3,6 +3,7 @@ from utils import *
 from forms import SearchQueryData
 import os
 from search_controller import *
+import json
 # CONFIGURATION
 
 DEBUG = True
@@ -39,6 +40,10 @@ def retro():
     checks = checks.split(",")
     print('La lista de los checks: ',checks)
     path = session["path"]
+    query = session["query"]
+    with open(query,"w+") as fd:
+        json.dump({"query":query,"relevant":checks},fd) 
+
     s_keywords = " ".join(keywords(checks,path))
     return render_template_string(s_keywords)
 
@@ -54,6 +59,7 @@ def show_entries():
         query = SearchQueryData(request.form)
         results, result_info = get_results(query.query.data,query.folder_path.data)
         session["path"] = query.folder_path.data
+        session["query"] = query.query
         session.modified = True
         print(results)
         results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]).replace('/','@'),result[2], value=result[0])for result in results]

@@ -15,12 +15,12 @@ class Reader():
 
     def readDirectory(self, directory,names=[]):
         list_of_files = listdir(directory)
-        print(f'Se encuentran {list_of_files}')
+        #print(f'Se encuentran {list_of_files}')
         result = []
         for filename in list_of_files:
             path = join(directory,filename)
             if isfile(path):
-                print(f'its a file {filename}')
+                #print(f'its a file {filename}')
                 a = self.readFile(path)
                 for name,content in a:
                     if name in names:
@@ -66,7 +66,7 @@ class Reader():
         
         
     def __readTxt(self, filename):
-        print(f" Analizando el file {filename}")
+        #print(f" Analizando el file {filename}")
         name = filename.split("/")[-1]
         data = ""
         with open(filename, 'r') as txt:
