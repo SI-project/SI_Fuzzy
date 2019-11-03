@@ -21,7 +21,7 @@ def relay(rr:list,nr:list):
     '''
     return _general_form(rr,nr)
 
-def f(p:int,r:int,beta:int):
+def f(p:int,r:int,beta):
     ''' 
         Permite analizar la precicion sobre el recobrado y viceversa
         p: precicion

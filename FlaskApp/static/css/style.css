@@ -39,9 +39,14 @@ h5 {
   font-weight: 600;
 }
 .nav > li > a {
-  color: #a7b1c2;
+  color: white;
   font-weight: 600;
   padding: 14px 20px 14px 25px;
+  background-color: #1ab394
+}
+.nav > li > a:hover{
+  background-color: #18a689;
+  border-color: #18a689;
 }
 .nav.navbar-right > li > a {
   color: #999c9e;

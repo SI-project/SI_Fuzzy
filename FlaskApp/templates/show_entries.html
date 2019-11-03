@@ -52,9 +52,16 @@
                                 {% endif %}
                                 {% if not initial %}
                                 <button class="btn btn-group-lg btn-primary" id="retro-btn"
-                                        style="margin-top: 2%" type="button">Feedback</button>
+                                        style="margin-top: 2%" type="button">Get words</button>
+{#                                    <br/>#}
+{#                                    <br/>#}
+{#                                    <button class="ladda-button btn-group-lg btn btn-primary"  data-style="slide-left">#}
+{#                                    <span class="ladda-label">Get keywords</span>#}
+{#                                        <span class="ladda-spinner"></span>#}
+{#                                    </button>#}
                                 {% endif %}
                                 <div>
+                                    <p id="keywords"> </p>
                                     <h5 id="retro_count"></h5>
                                 </div>
 
@@ -98,3 +105,7 @@
         </div>
         </div>
 {% endblock %}
+
+
+
+

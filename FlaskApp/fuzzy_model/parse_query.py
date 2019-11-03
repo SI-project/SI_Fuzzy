@@ -55,8 +55,11 @@ class Parser(object):
         term : ID
         """
         w_modify = lower_stemming(p[1])
-        sinom = [w_modify] + self.word_sinom[w_modify][:2]
-        word = queryProcess(sinom)
+        try:
+            sinom = [w_modify] + self.word_sinom[w_modify][:2]
+            word = queryProcess(sinom)
+        except:
+            word = queryProcess([p[1]])
         p[0] = "({})".format(word)
 
     def p_logic(self, p):
