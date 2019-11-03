@@ -1,9 +1,10 @@
-from fuzzy_model.Fuzzy import rank
-from fuzzy_model.reader import Reader
-from fuzzy_model.preprocess import allPreprocess
-from fuzzy_model.lexer_query import Lexer
-from fuzzy_model.parse_query import Parser
-
+from Fuzzy import rank
+from reader import Reader
+from preprocess import allPreprocess
+from lexer_query import Lexer
+from parse_query import Parser
+import feedback
+from random import choices
 #print(allPreprocess("Ant-Man"))
 r = Reader()
 r.readDirectory("./")
@@ -16,3 +17,6 @@ query = p.parse(query)
 print(query)
 most_similar = rank(query,r.documents)
 print(most_similar)
+
+keys= feedback.get_keywords(most_similar,"./",choices(most_similar[30:],k=20))
+print(keys)

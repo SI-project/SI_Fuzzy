@@ -1,6 +1,6 @@
 import PyPDF2
 import json
-from fuzzy_model.preprocess import allPreprocess
+from preprocess import allPreprocess
 from os import listdir
 from os.path import isfile, join
 class Reader():
@@ -13,19 +13,25 @@ class Reader():
         self.vocab = set()
         self.documents = []
 
-    def readDirectory(self, directory):
+    def readDirectory(self, directory,names=[]):
         list_of_files = listdir(directory)
         print(f'Se encuentran {list_of_files}')
+        result = []
         for filename in list_of_files:
             path = join(directory,filename)
             if isfile(path):
                 print(f'its a file {filename}')
-                self.readFile(path)
+                a = self.readFile(path)
+                for name,content in a:
+                    if name in names:
+                        result.append((name,content))
+        return result
 
     def readFile(self, filename):
         _format = filename.split(".")[-1]
         if _format in self.readFunction.keys():
-            self.readFunction[_format](filename)
+            return self.readFunction[_format](filename)
+        return []
 
     def readFiles(self,files):
         for file in files:
@@ -36,10 +42,13 @@ class Reader():
         data = ""
         with open(filename, encoding='utf-8') as js:
             data_dict = json.load(js)
-
+        result = []
         for _dict in data_dict:
             for k in _dict.keys():
                 self.__save_data(_dict[k], k)
+                result.append((k,_dict[k]))
+
+        return result
 
     def __readPdf(self, filename):
         name = filename.split("/")[-1]
@@ -49,7 +58,8 @@ class Reader():
             for i_page in range(pdfFile.numPages):
                 data += pdfFile.getPage(i_page).extractText()
         self.__save_data(data, name)
-
+        return [(name,data)]
+        
     def __readTxt(self, filename):
         print(f" Analizando el file {filename}")
         name = filename.split("/")[-1]
@@ -58,16 +68,15 @@ class Reader():
             data = txt.read()
 
         self.__save_data(data, name)
-
+        return [(name,data)]
     def __save_data(self, data, name):
         tokens = allPreprocess(data)
-
         doc = Document(name)
         for elem in tokens:
             doc[elem] = 1
             self.vocab.add(elem)
         self.documents.append(doc)
-
+        
 class Document(dict):
     def __init__(self, name):
         super(dict,self).__init__()
