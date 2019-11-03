@@ -8,7 +8,7 @@ from random import choices
 #print(allPreprocess("Ant-Man"))
 r = Reader()
 r.readDirectory("./")
-query = "iron & azaceta"
+query = "blog & firearm"
 l = Lexer()
 p = Parser(l)
 
