@@ -7,7 +7,7 @@ class Parser(object):
         self.lexer = lexer_instance.lexer
         self.tokens = list(lexer_instance.tokens)
 
-        with open("tesauro.json",'r') as fd:
+        with open("./fuzzy_model/tesauro.json",'r') as fd:
             self.word_sinom = json.load(fd)
         self.parser = yacc.yacc(start='program', module=self)
 

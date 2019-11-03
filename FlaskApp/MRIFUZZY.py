@@ -27,7 +27,9 @@ def retro():
     checks = request.form['list']
     checks = checks.split(",")
     print('La lista de los checks: ',checks)
-    return render_template_string('OK')
+    path = session["path"]
+    s_keywords = " ".join(keywords(checks,path))
+    return render_template_string(s_keywords)
 
 @app.route('/',methods=['GET','POST'])
 def show_entries():
@@ -39,6 +41,8 @@ def show_entries():
         print('Se hizo un post')
         query = SearchQueryData(request.form)
         results, result_info = get_results(query.query.data,query.folder_path.data)
+        session["path"] = query.folder_path.data
+        session.modified = True
         print(results)
         results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]),result[2], value=result[0])for result in results]
         initial = False

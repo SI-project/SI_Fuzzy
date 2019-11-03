@@ -24,7 +24,7 @@ class Reader():
                 a = self.readFile(path)
                 for name,content in a:
                     if name in names:
-                        result.append((name,content))
+                        result.append(content)
         return result
 
     def readFile(self, filename):
@@ -46,16 +46,14 @@ class Reader():
         result = []
         try:
             data_dict[0]["title"]
-            for _dict in data_dict:
-                self.__save_data(_dict["narr"], _dict["title"], desc=_dict["desc"])
-                result.append((_dict["title"],_dict["narr"]))
+            for _dict in data_dict:                
+                result.append(self.__save_data(_dict["narr"], _dict["title"], desc=_dict["desc"]))
         except:
             for _dict in data_dict:
                 for k in _dict.keys():
-                    self.__save_data(_dict[k], k)
-                    result.append((k,_dict[k]))
+                    result.append(self.__save_data(_dict[k], k))
 
-            return result
+        return result
 
     def __readPdf(self, filename):
         name = filename.split("/")[-1]
@@ -64,8 +62,8 @@ class Reader():
             pdfFile = PyPDF2.PdfFileReader(pdf)
             for i_page in range(pdfFile.numPages):
                 data += pdfFile.getPage(i_page).extractText()
-        self.__save_data(data, name)
-        return [(name,data)]
+        return [self.__save_data(data, name)]
+        
         
     def __readTxt(self, filename):
         print(f" Analizando el file {filename}")
@@ -73,17 +71,17 @@ class Reader():
         data = ""
         with open(filename, 'r') as txt:
             data = txt.read()
-
-        self.__save_data(data, name)
-        return [(name,data)]
+        return [self.__save_data(data, name)]
+         
     
-    def __save_data(self, data, name):
+    def __save_data(self, data, name,desc=""):
         tokens = allPreprocess(data)
-        doc = Document(name)
+        doc = Document(name,desc)
         for elem in tokens:
             doc[elem] = 1
             self.vocab.add(elem)
         self.documents.append(doc)
+        return (name,doc)
         
 class Document(dict):
     def __init__(self, name, description=""):

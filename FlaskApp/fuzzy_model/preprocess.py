@@ -26,11 +26,13 @@ def stemming(token_list):
 
 def stemming_no_contraction(token_list):
     ps = PorterStemmer()
+    
     return [ps.stem(w) for  w in token_list]
 
 def lemmatizing(token_list):
-    lemmatizer = WordNetLemmatizer()
-    return [lemmatizer.lemmatize(w) for w in token_list]
+    #lemmatizer = WordNetLemmatizer()
+    #return [lemmatizer.lemmatize(w) for w in token_list]
+    return token_list
 
 def allPreprocess(text,contract=True):
     tokens = tokenize(text)

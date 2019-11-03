@@ -13,16 +13,16 @@ def get_vocabulary(documents):
 def tf_idf(documents,vocab):
     vocab_to_index = dict(zip(vocab,range(len(vocab))))
     tf = np.zeros((len(vocab),len(documents)))
-    #df = np.zeros(len(vocab))
+    df = np.zeros(len(vocab))
     for j,doc in enumerate(documents):
         for word in doc:
             i = vocab_to_index[word]
             tf[i,j] += 1
-            #if tf[i,j] == 1:
-            #    df[i] += 1
-    #mx = tf.max(axis=0)
-    #tf = (tf/mx)
-    #tf_idf = (tf.transpose()*df/len(documents)).transpose()
+            if tf[i,j] == 1:
+                df[i] += 1
+    mx = tf.max(axis=0)
+    tf = (tf/mx)
+    tf_idf = (tf.transpose()*df/len(documents)).transpose()
     return tf
 
 def process_docs(documents):
