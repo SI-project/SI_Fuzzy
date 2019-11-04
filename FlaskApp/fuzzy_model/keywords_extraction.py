@@ -2,7 +2,7 @@ from fuzzy_model.Fuzzy import term_fuzzy
 from fuzzy_model.util import Zero_dict
 from fuzzy_model.reader import Reader
 
-def keyword_extraction(documents,path,k=20):
+def keyword_extraction(documents,path,k=5):
     r = Reader()
     documents = r.readDirectory(path,documents)
     word_relevance = Zero_dict()
