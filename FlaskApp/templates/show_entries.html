@@ -51,17 +51,21 @@
                                     </ul>
                                 {% endif %}
                                 {% if not initial %}
+                                {% if results %}
                                 <button class="btn btn-group-lg btn-primary" id="retro-btn"
-                                        style="margin-top: 2%" type="button">Get words</button>
+                                        style="margin-top: 2%" type="button">Get keywords</button>
 {#                                    <br/>#}
 {#                                    <br/>#}
 {#                                    <button class="ladda-button btn-group-lg btn btn-primary"  data-style="slide-left">#}
 {#                                    <span class="ladda-label">Get keywords</span>#}
 {#                                        <span class="ladda-spinner"></span>#}
 {#                                    </button>#}
+                                    {% else %}
+                                    <h5>No results.</h5>
                                 {% endif %}
+                                {% endif %}
+                                <p id="keywords"> </p>
                                 <div>
-                                    <p id="keywords"> </p>
                                     <h5 id="retro_count"></h5>
                                 </div>
 
@@ -75,7 +79,7 @@
                                 <p>
                                     {{ result.description }}
                                 </p>
-                                <label>{{result.value}}</label>
+                                <label>Similarity: {{result.value}}</label>
                                 <div class="checkbox checkbox-success">
                                     <input class="relevance" id="checkbox-relevant_{{ result.name }}" type="checkbox" result_name="{{ result.name }}">
                                     <label for="checkbox-relevant_{{ result.name }}">Mark as relevant</label>
@@ -84,21 +88,9 @@
                                 <div class="hr-line-dashed"></div>
                             {% endfor %}
                         </div>
-{#                            {% if searching %}#}
-{#                            <div class="text-center">#}
-{#                                <div class="btn-group">#}
-{#                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i></button>#}
-{#                                    <button class="btn btn-white">1</button>#}
-{#                                    <button class="btn btn-white  active">2</button>#}
-{#                                    <button class="btn btn-white">3</button>#}
-{#                                    <button class="btn btn-white">4</button>#}
-{#                                    <button class="btn btn-white">5</button>#}
-{#                                    <button class="btn btn-white">6</button>#}
-{#                                    <button class="btn btn-white">7</button>#}
-{#                                    <button class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i> </button>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        {% endif %}#}
+                        {% if results %}
+                        <h4>Total results {{ results.__len__()}}</h4>
+                        {% endif %}
                         </div>
                     </div>
                 </div>

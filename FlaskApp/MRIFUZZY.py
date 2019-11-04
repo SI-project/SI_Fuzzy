@@ -60,13 +60,14 @@ def show_entries():
         session["query"] = query.query
         session.modified = True
         print(results)
-        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]).replace('/','@'),result[2], value=result[0])for result in results]
+        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]).replace('/','@'),"", value=result[0])for result in results]
         initial = False
     return render_template('show_entries.html',
                            results=results,
                            result_info=result_info,
                            query_form=query,
-                           initial=initial)
+                           initial = initial
+                           )
 
 
 if __name__ == '__main__':
