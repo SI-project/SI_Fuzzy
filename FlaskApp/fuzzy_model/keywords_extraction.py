@@ -9,7 +9,7 @@ def keyword_extraction(documents,path,k=20):
     #input(documents)
     for doc in documents:
         for word in doc.keys():
-            doc_relevance = term_fuzzy(word,doc,documents)  
+            doc_relevance = term_fuzzy(word,doc,documents,path)  
             word_relevance[word]+= doc_relevance
     vocabulary = list(word_relevance.keys())
     k = min(k,len(vocabulary))

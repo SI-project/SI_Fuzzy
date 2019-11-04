@@ -25,9 +25,9 @@ for search in info:
     query = p.parse(query)
     print("Query: {}".format(query))
     print("ranking {} documents".format(len(r.documents)))
-    most_similar = rank(query,r.documents)
+    most_similar = rank(query,r.documents,directory)
     print(most_similar)
-    most_similar = [i[1] for i in filter(lambda doc: doc[0]>0.1,most_similar)]
+    most_similar = [i[1] for i in filter(lambda doc: doc[0]>0.20,most_similar)]
     most_similar = [i[9:] for i in most_similar]
     print(most_similar)
     print("finded {} results".format(len(most_similar)))
@@ -35,11 +35,8 @@ for search in info:
     ri = list(filter(lambda x: not x in relevant_docs,most_similar))
     nr = list(filter(lambda x: not x in most_similar,relevant_docs))
     a = accuracy(rr,ri)
-    r = relay(rr,nr)
-    print("P: {}, R:{}".format(a,r))
-    
-
-
+    rel = relay(rr,nr)
+    print("P: {}, R:{}".format(a,rel))
     input("Next")
 
 

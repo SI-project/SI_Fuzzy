@@ -4,6 +4,7 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 
 def tokenize(text):
+    text = text.replace("-"," ")
     return word_tokenize(text)
 
 def lowercase(token_list):

@@ -1,6 +1,16 @@
 from sympy import to_dnf
 from copy import copy
+import pickle
 
+def dot(x,y):
+    x*= 1000
+    y*=1000
+    return (x*y)/1000000
+
+def rest(x,y):
+    x*=1000
+    y*=1000
+    return (x-y)/1000
 
 class fuzzy_logic:
     def __init__(self):
@@ -25,25 +35,25 @@ class fuzzy_logic:
             elif doc[j] == 1:
                 nj+= 1
         value = nij/(ni+nj-nij)
+        value = round(value,3)
         self.CIJ[(i,j)] = value
         self.CIJ[(j,i)] = value
         if value > 1: raise Exception("i: {} j:{}, ni : {},nj: {},nij: {}".format(i,j,ni, nj, nij))
-        return round(value,5)
+        return value
 
     #entre 0 y 1
     def term_fuzzy(self,term,doc,documents):
         product = 1
         for word in doc.keys():
             if doc[word] == 1:
-                product *= (1 - self.c_ij(term,word,documents))
-                product = round(product,5)
-        return 1 - product
+                product = dot(rest(1, self.c_ij(term,word,documents)),product)
+                product = round(product,3)
+        return rest(1,product)
 
 
     def get_terms(self,Query,neg=True):
         splits = ["|"," ","&","(",")"]
         if neg: splits.append("~")
-        Q_l = Query
         for i in splits:
             Query = Query.replace(i," ")
         return Query.split()
@@ -55,13 +65,13 @@ class fuzzy_logic:
             fdnf_product = 1
             for term in component:
                 if term[0] == "~":
-                    fdnf_product*= (1 - self.term_fuzzy(term[1:],documents[d_index],documents))
+                    fdnf_product= dot(rest(1,self.term_fuzzy(term[1:],documents[d_index],documents)),fdnf_product)
                     
                 else:
-                    fdnf_product*= self.term_fuzzy(term,documents[d_index],documents)
-                fdnf_product = round(fdnf_product,5)
-            query_product*= (1 - fdnf_product)
-            query_product = round(query_product,5)
+                    fdnf_product = dot(self.term_fuzzy(term,documents[d_index],documents),fdnf_product)
+                fdnf_product = round(fdnf_product,3)
+            query_product = dot(rest(1, fdnf_product),query_product)
+            query_product = round(query_product,3)
         return query_product
 
 
@@ -89,9 +99,9 @@ class fuzzy_logic:
         product = 1
         
         for cc in Q:
-            product*= self.rank_cc(cc,documents,Q_t,d_index)
-            product = round(product,5)
-        return 1 - product
+            product = dot(self.rank_cc(cc,documents,Q_t,d_index),product)
+            product = round(product,3)
+        return rest(1,product)
 
     def rank(self,Query,documents):
         ranks = []
@@ -99,9 +109,24 @@ class fuzzy_logic:
             ranks.append(self.rank_Cdnf(Query,documents,i))
         return sorted([(ranks[i],d.name) for i,d in enumerate(documents)],key=lambda x: x[0],reverse=True)
 
-def rank(Qery,documents):
-    ranker = fuzzy_logic()
-    return ranker.rank(Qery,documents)
+def rank(Qery,documents,path):
+    try:
+        with open(path+"/"+"fuzzy.pickle") as fd:
+            ranker = pickle.load(fd)
+    except:
+        ranker = fuzzy_logic()
+    rnk = ranker.rank(Qery,documents)
+    with open(path+"/"+"fuzzy.pickle","wb+") as fd:
+        pickle.dump(ranker,fd)
+    return rnk
+def term_fuzzy(term,doc,documents,path):
+    try:
+        with open(path+"/"+"fuzzy.pickle") as fd:
+            ranker = pickle.load(fd)
+    except:
+        ranker = fuzzy_logic()
+    return ranker.term_fuzzy(term,doc,documents)
+
 # a ="A & (C | ~D)"
 # documents = [{"A": 0, "B":0, "C":1, "D": 0},
 #             {"A": 1, "B":1, "C":1, "D": 0},

@@ -30,9 +30,7 @@ def retro():
     print('La lista de los checks: ',checks)
     path = session["path"]
     query = session["query"]
-    with open(query,"w+") as fd:
-        json.dump({"query":query,"relevant":checks},fd) 
-
+    
     s_keywords = " ".join(keywords(checks,path))
     return render_template_string(s_keywords)
 
@@ -50,7 +48,7 @@ def show_entries():
         session["query"] = query.query
         session.modified = True
         print(results)
-        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]),result[2], value=result[0])for result in results]
+        results = [ResultObject(result[1],''.join([query.folder_path.data,'/',result[1]]),'', value=result[0])for result in results]
         initial = False
     return render_template('show_entries.html',
                            results=results,
