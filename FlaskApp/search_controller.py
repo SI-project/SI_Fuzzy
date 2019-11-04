@@ -15,7 +15,8 @@ def get_results(query,folder_path):
     query = p.parse(query)
     print("=========== {}".format(query))
     initial_time = time.time()
-    most_similar = rank(query, r.documents)
+    most_similar = rank(query, r.documents,folder_path)
+    most_similar = list(filter(lambda x: x[0]>0.2,most_similar))
     final_time = time.time() - initial_time
     result_info = GeneralResultInfo(len(most_similar), final_time)
 

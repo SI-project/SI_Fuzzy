@@ -2,14 +2,14 @@ from fuzzy_model.Fuzzy import term_fuzzy
 from fuzzy_model.util import Zero_dict
 from fuzzy_model.reader import Reader
 
-def keyword_extraction(documents,path,k=20):
+def keyword_extraction(documents,path,k=5):
     r = Reader()
     documents = r.readDirectory(path,documents)
     word_relevance = Zero_dict()
     #input(documents)
     for doc in documents:
         for word in doc.keys():
-            doc_relevance = term_fuzzy(word,doc,documents)  
+            doc_relevance = term_fuzzy(word,doc,documents,path)  
             word_relevance[word]+= doc_relevance
     vocabulary = list(word_relevance.keys())
     k = min(k,len(vocabulary))

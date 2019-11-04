@@ -41,9 +41,7 @@ def retro():
     print('La lista de los checks: ',checks)
     path = session["path"]
     query = session["query"]
-    with open(query,"w+") as fd:
-        json.dump({"query":query,"relevant":checks},fd) 
-
+    
     s_keywords = " ".join(keywords(checks,path))
     return render_template_string(s_keywords)
 
