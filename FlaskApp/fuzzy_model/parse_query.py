@@ -56,7 +56,7 @@ class Parser(object):
         """
         w_modify = lower_stemming(p[1])
         try:
-            sinom = [w_modify] + self.word_sinom[w_modify][:2]
+            sinom = [w_modify] + self.word_sinom[w_modify][:1]
             word = queryProcess(sinom)
         except:
             word = queryProcess([p[1]])

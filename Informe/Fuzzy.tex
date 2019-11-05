@@ -1,0 +1,130 @@
+\documentclass[]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+%opening
+\title{\huge Informe Sistemas de Información}
+\author{Ariel Bazán Rey C-512 \and Greidy Valdés Vivanco C-512\and Ariel Coto Santiesteban C-512}
+
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Introducción.}
+A raíz del artículo \emph{As We May Think}, de Vannevar Bush (1890-1974), ingeniero y científico estadounidense, se hizo común la idea de vincular las computadoras a la tarea de búsqueda de trozos relevantes de información. Fueron presentados los primeros sistemas computarizados en las décadas del '50 y '60. Con el surgimiento de los motores de búsqueda en los '90 se hizo mucho más necesario crear sistemas de recuperación con mayor rendimiento y capacidad. Con el desarrollo de las telecomnicaciones y el internet, hoy en día se maneja millones de terabytes a través de las redes. En la actualidad existen una gran variedad de modelos, entre ellos están los clásicos como: Booleano, Vectorial y Probabilístico. A partir de estos modelos, han surgido mejoras, en este caso, el siguiente artículo se referirá al modelo Fuzzy. El modelo Booleano, basado en teoría de  conjuntos y el álgebra booleana, su estrategia de recuperación se basa en el criterio binario sin ninguna escala de relevancia de un documento a una consulta. Dada esta problemática, surgen los modelos Fuzzy y Booleano Extendido.
+El modelo Fuzzy fue propuesto por Yasushi Ogawa, Tetsuya Morita y Kiyohiko Kobayashi. En las siguientes secciones se describirá una implementación de este modelo. En la sección \ref{section:UI} se describirá la interfaz de usuario que se presenta al modelo. La sección \ref{section:procText} muestra todo el proceso de manipulación de texto. Seguidamente en \ref{section:model}, se desarrolla las ideas principales del modelo Fuzzy. Finalmente, las secciones \ref{section:indexes}, \ref{section:eval} y \ref{section:extraf} tratan sobre la creación de índices, las medidas de evalación del sistema y las funcionaliades extras que se ofrecen, respectivamente.
+
+\section{Interfaz de Usuario.}
+\label{section:UI}
+
+El proyecto consta con una interfaz de usuario básica. Una barra para introducir la dirección hacia un directorio donde se encuentran los documentos, una barra de búsqueda en espera de una consulta sobre ese grupo de documentos y un botón para comenzar a buscar. Después se muestra una lista de documentos ordenada por la relevancia de la consulta en cada uno de ellos y el usuario puede marcarlos como relevantes para encontrar palabras claves en los documentos seleccionados. La consulta a realizar debería ser booleana donde entre palabras deben aparecer los operadores lógicos \&, \textbar{}, \textasciitilde{}. 
+
+\section{Procesamiento de texto.}
+\label{section:procText}
+Una mejora a cualquier sistema de información es el procesamiento de texto ya que reduce el vocabulario sobre el cual se trabaja, por lo que es más fácil su manipulación computacionalmente. Esto además mejora los resultados obtenidos puesto que la ocurrencia de un término en los documentos podría no ser exacta a la de la consulta. 
+
+En el proyecto se utilizan varias técnicas de pre-procesamiento a los documentos, ellas son:
+
+\begin{enumerate}
+	\item Tokenizar el texto para transformarlo en una lista de palabras.
+	\item Llevar todas las palabras a minúsculas.
+	\item Eliminar signos de puntuación(\@\#\$\%\&.,:;).
+	\item Eliminar números.
+	\item Remover \textbf{stopwords} (preposiciones, conjunciones, etc.).
+	\item Llevar las palabras a su raíz(game:game, game:gaming).
+\end{enumerate}
+
+Estas técnicas también son aplicadas a la consulta. Todo el pre-procesamiento del sistema está pensado para texto en idioma inglés. 
+
+\section{Modelo de Recuperación de Información}
+\label{section:model}
+De los modelos estudiados en clases se escogió el Modelo Fuzzy, el cual parte del modelo clásico booleano. Posee una representación binaria de los documentos y de la consulta, por lo que no cuenta con la frecuencia del término en los documentos. También representa la dependencia entre términos al contener una matriz de correlación.
+
+Para representar la matriz de correlación entre los documentos, esta no se calcula inicialmente puesto que se está trabajando con un vocabulario extenso. En cambio, cuando se quiere saber la relación entre dos palabras se analiza la existencia de las mismas en todos los documentos. Una mejora computacional considerable fue guardar los resultados en un diccionario y de esta forma la correlación entre dos palabras sólo se calcula una vez. En la práctica, esta forma resultó ser mucho más rápida.
+
+\section{Creación de índices}
+\label{section:indexes}
+Para el mejor manejo de los documentos y para obtener mayor eficiencia computacional, se implementó una clase que hereda de \textit{dict}(clase built-in de python), donde se guarda un $1$ para cada palabra que aparece en el documento. Esto es una mejora significativa ya que de lo contrario habría que almacenar $1$ o $0$ por documento para cada palabra en el vocabulario general y esto representa gran cantidad de espacio en memoria. De esta forma, para obtener las palabras que aparecen en un documento se utiliza \textit{documment.keys()}.
+
+Esta representación es utilizada para el cálculo de la función de pertenencia del modelo y para la creación de la matriz de correlación.
+
+
+\section{Funcionalidades Opcionales}
+\label{section:extraf}
+\subsection{Crawler}
+
+Se implementó un crawler para la construcción de un corpus para el análisis del modelo. Este fue de mucha ayuda inicialmente pero carecía de ejemplos clasificados, además la mayoría de los documentos obtenidos tenían la misma temática y por tanto se obtuvo una matriz de correlación fuertemente relacionada.
+
+\subsection{Expansión de consulta}
+ Se utilizó un tesauro del idioma inglés para realizar expansión de consultas a través de sinónimos, por ejemplo por cada palabra de la consulta se sustituye ($palabra$ \textbar $sinonimo_1$ \textbar $sinonimo_2$). Se seleccionan solamente 2 sinónimos para evitar la creación de consultas muy largas que pueden aumentar la complejidad computacional de la evaluación.
+ 
+ \subsection{Extacción de palabras clave}
+ El sistema permite al usuario seleccionar los documentos que le resultaron relevantes y buscar entre ellos palabras claves que le ayuden a mejorar la consulta.
+ 
+ Para esto se utilizó el propio modelo. El modelo fuzzy establece por cada término una función de pertenencia de un documento a ese término. De esta forma se obtienen como palabras claves, aquellas a las que los documentos seleccionados por el usuario tengan mayor nivel de pertenencia. 
+
+\section{Evaluación del Sistema}
+\label{section:eval}
+Para la evaluaciión del sistema se utilizó un corpus de medicina de 1033 documentos, para los cuales ya existían predefinidas algunas consultas y los documentos relevantes a las mismas. Sin embargo, estas no fue posible probarlas tal cual puesto que se expresan en lenguaje natural. 
+
+Para convertir las consultas primeramente se seleccionaron las palabras relevantes (mayormente sustantivos) y se separaron por operadores \&. Sin embargo, al ser textos mayormente científicos el modelo no fue capaz de encontrar correleción entre muchos términos y si un término no aparecía en el documento se obtienen un bajo (casi 0) grado de similitud. Por este motivo se decidío separar las palabras claves por el operador or. 
+
+Esto a su vez trajo un nuevo problema. Como el modelo utiliza forma normal disyuntiva completa consultas de muchos términos, se convierten en formas normales con una cantidad exponencial de componentes conjuntivas, lo que hace extremadamente lento el proceso. De esta manera se redujeron las consultas a la disyunción de las 2 o 3 palabras claves más relevantes en la misma.
+
+Es importante resaltar que los resultados que se están tomando como relevantes, lo son a una consulta en lenguaje natural, la representación booleana no es quizás la que mejor representa la consulta original
+
+Junto con el proyecto, se encuentran los documentos queries.txt y evaluator.py. En el primero aparecen un conjunto de consultas predefinidas (30) y los resultados que son relevantes. El segundo es un script de python en el cual se ejecuta el modelo y se evalúa teniendo en cuenta las distintas medidas estudiadas. 
+\begin{table}[htb]
+	\centering
+	\begin{tabularx}{\textwidth}{c|ccccc}
+		\hline
+		Consulta&P&R&F($\beta:1$)& F($\beta:2$)& F($\beta:0.5 $)\\ \hline
+		crystalline\textbar vertebrates&0.55&0.51&0.52&0.51&0.53\\
+		cerebrospinal\textbar concentrationsor& 0.31& 0.87& 0.46& 0.64& 0.36\\
+		electron\textbar lung\textbar bronchi& 0.05 & 1 & 0.06 & 0.15 & 0.04\\
+		bronchial \& neoplasms& 0 & 0 & |& | & |\\
+		radioisotopes\textbar heart  & 0.05 & 0.9 & 0.11 & 0.24 & 0.07 \\ \hline
+		
+		
+		
+	\end{tabularx}
+	
+	\caption{Medidas de evaluación en algunas consultas}
+	\label{tabla:Resultados}
+	
+\end{table}
+
+El cuadro \ref{tabla:Resultados} muestra algunas consultas y los resultados obtenidos en algunas medidas. La P representa lamedida de Precisión, la R el Recobrado y la F la medida F.
+
+La primera consulta muestra cierto balance entre estas medidas. En la consulta 4, se obtiene en ambas 0 recobrado y precisión. Esto se debe a que estas palabras no aparecen juntas en ningún documento. En el resto, se aprecia una baja precisión y un alto recobrado. Esto ocurre porque al menos una de las palabras aparecen en la mayoría de los textos, por esto el modelo recupera casi todos los documentos aunque no sean relevantes. 
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
